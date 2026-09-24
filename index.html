@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="web_standard" name="shell-type">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main>:first-child {
+                margin-top: 0 !important;
+            }
+
+            main>:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-secondary-container": "#5c647a", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#3323cc", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#ffb1c2", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "background": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "inverse-primary": "#ffb1c2", "surface-variant": "#d3e4fe", "secondary": "#565e74", "tertiary": "#3120ca", "tertiary-container": "#4b42e1", "surface-tint": "#bb0455", "on-primary-fixed-variant": "#8f003f", "surface-container-high": "#dce9ff", "secondary-container": "#dae2fd", "on-tertiary": "#ffffff", "outline": "#8d6f75", "inverse-surface": "#213145", "on-tertiary-container": "#d4d1ff", "tertiary-fixed-dim": "#c3c0ff", "on-tertiary-fixed": "#0f0069", "primary-container": "#b80053", "surface-bright": "#f8f9ff", "tertiary-fixed": "#e2dfff", "outline-variant": "#e1bec4", "on-surface-variant": "#5a4045", "on-error": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#dae2fd", "secondary-fixed-dim": "#bec6e0", "error-container": "#ffdad6", "surface": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#3f0018", "inverse-on-surface": "#eaf1ff", "on-primary-container": "#ffc7d2", "on-background": "#0b1c30", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "on-surface": "#0b1c30", "on-secondary-fixed": "#131b2e", "primary": "#8c003e", "primary-fixed": "#ffd9df"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.5rem", "gutter-lg": "2rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "margin": "2rem", "margin-desktop": "3rem"}, "fontFamily": {"title-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-sm": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "title-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"]}, "fontSize": {"title-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}], "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]}}}};</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+    <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div
+            class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex items-center justify-between gap-gutter">
+            <div class="flex items-center gap-space-md"><img alt="Laboral Kutxa Modelo ANDES Logo"
+                    class="h-8 w-auto object-contain"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1XhRcVJS32u8eEjU1u-VYIPANRHsLfxYHItCPDrSTU3KDdaR2r3ZiZW-7mhg6BEX-ZhXZF2Cyo6Bnk2RuB9REfcJUQL0p06c7iHAzqJ-c4wkJR4jZLqTv-qjRvSMtLGiiMqmtSWfrCmL0ZGGMN9n4_tpf3VneNclbSjO_W1OvLVdTsH1ezS0J3bqeL-cOZk-8fV6BGmULjJVKQfExeXuWEhFR1kWNgk-ngGuDzYB6IYo_HhhWTZ9uB37g"><span
+                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight hidden sm:inline-block">Modelo
+                    ANDES</span></div>
+            <nav class="hidden xl:flex items-center gap-space-md"
+                data-active-classes="bg-surface-container text-on-surface rounded-lg"><a aria-current="page"
+                    class="font-title-sm px-space-sm py-space-xs transition-colors bg-surface-container text-on-surface rounded-lg"
+                    data-path="inicio" href="#que-es-andes">¿Qué es ANDES?</a><a
+                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="etapas-del-programa" href="#etapas">Recorrido y Etapas</a><a
+                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="beneficios-y-apoyo" href="#beneficios">Beneficios</a><a
+                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="test-de-diagnostico" href="#diagnostico">Test de Diagnóstico</a><a
+                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
+                    data-path="preguntas-frecuentes" href="#faq">Preguntas Frecuentes</a></nav>
+            <div class="flex items-center gap-space-sm md:gap-space-md">
+                <div
+                    class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span
+                        class="font-label-sm text-label-sm text-on-surface">Convocatoria Abierta 2025</span>
+                </div><a
+                    class="hidden md:inline-flex items-center justify-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"
+                    href="#diagnostico">Descubre tu etapa</a><a
+                    class="inline-flex items-center justify-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
+                    href="#contacto">Contacto</a>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span
+                        class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full pt-20 bg-surface">
+        <div class="flex flex-col w-full">
+            <!-- HERO SECTION -->
+            <section class="relative w-full overflow-hidden bg-surface py-space-xl lg:py-28">
+                <!-- Ambient glow decorative layers -->
+                <div
+                    class="absolute -top-24 -left-24 w-96 h-96 bg-primary-fixed opacity-30 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute top-1/2 -right-32 w-80 h-80 bg-secondary-container opacity-40 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center">
+                        <!-- Hero Text Column -->
+                        <div class="lg:col-span-7 flex flex-col gap-space-md">
+                            <!-- Institutional Pill Badge -->
+                            <div
+                                class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit">
+                                <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                                <span class="font-label-md text-label-md text-on-surface">Iniciativa de Innovación
+                                    Abierta y Emprendimiento • Laboral Kutxa</span>
+                            </div>
+                            <!-- Main Hero Title -->
+                            <h1
+                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface tracking-tight">
+                                Impulsa tu proyecto. Descubre dónde <span
+                                    class="text-primary-container relative inline-block">empieza tu camino.</span>
+                            </h1>
+                            <!-- Hero Subtitle -->
+                            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                                El <strong class="font-bold text-on-surface">Modelo ANDES</strong> de Laboral Kutxa te
+                                acompaña desde la exploración de una idea hasta la validación y el crecimiento de
+                                proyectos con alto potencial de impacto cooperativo y tecnológico.
+                            </p>
+                            <!-- CTAs -->
+                            <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+                                <a class="inline-flex items-center gap-space-xs font-title-sm text-title-sm px-space-lg py-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all shadow-md group"
+                                    href="#diagnostico">
+                                    <span class="">Descubre tu etapa y postula</span>
+                                    <span
+                                        class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">explore</span>
+                                </a>
+                                <a class="inline-flex items-center gap-space-xs font-title-sm text-title-sm px-space-lg py-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-all"
+                                    href="#que-es-andes">
+                                    <span class="">Conoce el Modelo ANDES</span>
+                                    <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                                </a>
+                            </div>
+                            <!-- Credential Metrics Bar -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-lg">
+                                <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col">
+                                    <span class="font-headline-sm text-headline-sm text-primary-container">1 Año</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Recorrido
+                                        flexible</span>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col">
+                                    <span class="font-headline-sm text-headline-sm text-tertiary">3 Etapas</span>
+                                    <span
+                                        class="font-label-sm text-label-sm text-on-surface-variant">Personalizadas</span>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col">
+                                    <span class="font-headline-sm text-headline-sm text-on-surface">100%</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Adaptado a tu
+                                        madurez</span>
+                                </div>
+                                <div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm flex flex-col">
+                                    <span class="font-headline-sm text-headline-sm text-secondary">Red LK</span>
+                                    <span class="font-label-sm text-label-sm text-on-surface-variant">Financiación
+                                        ágil</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Hero Journey Visual Diagram Component -->
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+                            <div class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-md relative">
+                                <div class="flex items-center justify-between pb-space-md">
+                                    <span
+                                        class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Entrada
+                                        Multimodal ANDES</span>
+                                    <span
+                                        class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface">Modelo
+                                        Dinámico</span>
+                                </div>
+                                <!-- Nodes Path Representation -->
+                                <div class="flex flex-col gap-space-md relative">
+                                    <!-- Stage 1 Mini preview -->
+                                    <div class="cursor-pointer p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between group"
+                                        onclick="switchStageTab('pre')">
+                                        <div class="flex items-center gap-space-sm">
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface">
+                                                <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                                            </div>
+                                            <div>
+                                                <div class="flex items-center gap-space-xs">
+                                                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                                    <h4 class="font-title-sm text-title-sm text-on-surface">
+                                                        Preincubación</h4>
+                                                </div>
+                                                <p class="font-body-sm text-body-sm text-on-surface-variant">Explorar y
+                                                    definir propuesta de valor</p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container-lowest text-on-surface font-semibold">3
+                                            Meses</span>
+                                    </div>
+                                    <!-- Connecting directional indicator -->
+                                    <div class="flex justify-center -my-2 text-on-surface-variant">
+                                        <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+                                    </div>
+                                    <!-- Stage 2 Mini preview -->
+                                    <div class="cursor-pointer p-space-md rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex items-center justify-between group"
+                                        onclick="switchStageTab('inc')">
+                                        <div class="flex items-center gap-space-sm">
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center">
+                                                <span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+                                            </div>
+                                            <div>
+                                                <div class="flex items-center gap-space-xs">
+                                                    <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                                    <h4 class="font-title-sm text-title-sm text-on-surface">Incubación
+                                                    </h4>
+                                                </div>
+                                                <p class="font-body-sm text-body-sm text-on-surface-variant">Construir,
+                                                    testear y validar PMV</p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container-lowest text-tertiary font-semibold">6
+                                            Meses</span>
+                                    </div>
+                                    <!-- Connecting directional indicator -->
+                                    <div class="flex justify-center -my-2 text-on-surface-variant">
+                                        <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+                                    </div>
+                                    <!-- Stage 3 Mini preview -->
+                                    <div class="cursor-pointer p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-center justify-between group"
+                                        onclick="switchStageTab('ace')">
+                                        <div class="flex items-center gap-space-sm">
+                                            <div
+                                                class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+                                                <span class="material-symbols-outlined text-[20px]">trending_up</span>
+                                            </div>
+                                            <div>
+                                                <div class="flex items-center gap-space-xs">
+                                                    <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                                    <h4 class="font-title-sm text-title-sm text-on-surface">Aceleración
+                                                    </h4>
+                                                </div>
+                                                <p class="font-body-sm text-body-sm text-on-surface-variant">Tracción,
+                                                    pilots LK y escala</p>
+                                            </div>
+                                        </div>
+                                        <span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container-lowest text-primary-container font-semibold">3
+                                            Meses</span>
+                                    </div>
+                                </div>
+                                <!-- Bottom micro caption -->
+                                <div class="pt-space-md flex items-center justify-between text-on-surface-variant">
+                                    <span class="font-label-sm text-label-sm">Entrada directa según madurez real</span>
+                                    <a class="font-label-sm text-label-sm text-primary-container hover:underline font-semibold flex items-center gap-0.5"
+                                        href="#etapas">
+                                        Ver detalle <span
+                                            class="material-symbols-outlined text-[14px]">chevron_right</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION: ¿QUÉ ES EL MODELO ANDES? -->
+            <section class="w-full bg-surface-container-low py-space-xl lg:py-24" id="que-es-andes">
+                <div
+                    class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex flex-col gap-space-xl">
+                    <!-- Header of the section -->
+                    <div class="max-w-3xl flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-md text-label-md text-primary-container uppercase tracking-widest font-bold">Filosofía
+                            de Acompañamiento</span>
+                        <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                            No todos los proyectos empiezan en el mismo punto.
+                        </h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                            En ANDES, cada proyecto entra en la etapa que mejor se adapta a su momento actual.
+                            Desmontamos los itinerarios rígidos de incubación tradicional mediante un modelo flexible de
+                            hasta 1 año de acompañamiento de alto impacto.
+                        </p>
+                    </div>
+                    <!-- Feature Grid: Modular Entry & Coherence -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between">
+                            <div class="flex flex-col gap-space-xs">
+                                <span
+                                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface font-title-sm text-title-sm font-bold">01</span>
+                                <h3 class="font-title-md text-title-md text-on-surface">Idea Inicial</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Para retos conceptualizados
+                                    sin solución técnica construida.</p>
+                            </div>
+                            <div class="pt-space-sm">
+                                <span
+                                    class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-on-surface font-semibold flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                                    Preincubación (3m)
+                                </span>
+                            </div>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between">
+                            <div class="flex flex-col gap-space-xs">
+                                <span
+                                    class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-surface font-title-sm text-title-sm font-bold">02</span>
+                                <h3 class="font-title-md text-title-md text-on-surface">Prototipo &amp; Validación</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Para equipos con MVP que
+                                    necesitan validar viabilidad comercial.</p>
+                            </div>
+                            <div class="pt-space-sm">
+                                <span
+                                    class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-secondary-container text-on-surface font-semibold flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">arrow_forward</span> Incubación
+                                    (6m)
+                                </span>
+                            </div>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between">
+                            <div class="flex flex-col gap-space-xs">
+                                <span
+                                    class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary font-title-sm text-title-sm font-bold">03</span>
+                                <h3 class="font-title-md text-title-md text-on-surface">Mercado &amp; Tracción</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant">Para startups con clientes
+                                    iniciales buscando escalabilidad corporativa.</p>
+                            </div>
+                            <div class="pt-space-sm">
+                                <span
+                                    class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-tertiary-fixed text-tertiary font-semibold flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">arrow_forward</span> Aceleración
+                                    (3m)
+                                </span>
+                            </div>
+                        </div>
+                        <div
+                            class="p-space-lg rounded-xl bg-primary-container text-on-primary shadow-sm flex flex-col gap-space-sm justify-between">
+                            <div class="flex flex-col gap-space-xs">
+                                <span
+                                    class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center font-title-sm text-title-sm font-bold">04</span>
+                                <h3 class="font-title-md text-title-md text-on-primary">Graduación &amp; Inversión</h3>
+                                <p class="font-body-sm text-body-sm text-on-primary-container">Integración con
+                                    cooperativas asociadas y canales de venture capital LK.</p>
+                            </div>
+                            <div class="pt-space-sm">
+                                <span
+                                    class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-primary text-on-primary font-semibold flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px]">workspace_premium</span> Impacto
+                                    Sostenible
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Core Value Statement Banner -->
+                    <div
+                        class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+                        <div class="flex items-center gap-space-md">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container shrink-0">
+                                <span class="material-symbols-outlined text-[24px]">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-title-md text-title-md text-on-surface">"Entra donde está tu proyecto"
+                                </h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">Sin transitar fases
+                                    redundantes. Evaluamos tu nivel de preparación y activamos el itinerario justo para
+                                    ti.</p>
+                            </div>
+                        </div>
+                        <a class="shrink-0 font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all"
+                            href="#diagnostico">
+                            Autodiagnóstico en 2 min
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- SECTION: LAS 3 ETAPAS DEL MODELO ANDES (EXPLORADOR CON TABS INTERACTIVOS) -->
+            <section class="w-full bg-surface py-space-xl lg:py-24" id="etapas">
+                <div
+                    class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex flex-col gap-space-xl">
+                    <!-- Section Title & Tab Controls -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div class="max-w-2xl flex flex-col gap-space-xs">
+                            <span
+                                class="font-label-md text-label-md text-primary-container uppercase tracking-wider font-semibold">Estructura
+                                Modular</span>
+                            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Las
+                                3 Etapas del Modelo ANDES</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Explora los requisitos,
+                                duración, objetivos y recursos específicos disponibles en cada fase.</p>
+                        </div>
+                        <!-- Custom Tab Switcher -->
+                        <div class="inline-flex p-1 bg-surface-container rounded-xl self-start md:self-auto">
+                            <button
+                                class="font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface shadow-sm transition-all"
+                                id="tab-btn-pre" onclick="switchStageTab('pre')">
+                                1. Preincubación
+                            </button>
+                            <button
+                                class="font-title-sm text-title-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-all"
+                                id="tab-btn-inc" onclick="switchStageTab('inc')">
+                                2. Incubación
+                            </button>
+                            <button
+                                class="font-title-sm text-title-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-all"
+                                id="tab-btn-ace" onclick="switchStageTab('ace')">
+                                3. Aceleración
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tab Content Panels Container -->
+                    <div class="w-full">
+                        <!-- TAB PANEL 1: PREINCUBACIÓN -->
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl shadow-md"
+                            id="stage-panel-pre">
+                            <div class="lg:col-span-7 flex flex-col gap-space-md">
+                                <div class="flex flex-wrap items-center gap-space-sm">
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-secondary"></span> Preincubación
+                                    </span>
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">Duración:
+                                        3 meses</span>
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">Dedicación
+                                        flexible</span>
+                                </div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-surface">Explorar y Descubrir</h3>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                                    Fase orientada a emprendedores, universitarios y personas con una hipótesis o
+                                    inquietud de negocio. Te ayudamos a aterrizar la oportunidad, comprender a los
+                                    usuarios y diseñar una solución viable.
+                                </p>
+                                <div class="flex flex-col gap-space-sm pt-space-xs">
+                                    <h4 class="font-title-sm text-title-sm text-on-surface uppercase tracking-wide">¿A
+                                        quién está dirigido?</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">
+                                        Personas con una idea inicial, estudiantes de grado o FP, investigadores con
+                                        hallazgos susceptibles de transferencia, y equipos tempranos que necesitan
+                                        estructurar su propuesta de valor.
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+                                    <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                                        <span
+                                            class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-secondary">target</span>
+                                            Objetivo Clave
+                                        </span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Transformar una
+                                            idea difusa en una propuesta de valor estructurada, comprensible y
+                                            validable.</span>
+                                    </div>
+                                    <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                                        <span
+                                            class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-secondary">checklist</span>
+                                            Entregable Final
+                                        </span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Dossier de
+                                            oportunidad de negocio validado con entrevistas de cliente iniciales.</span>
+                                    </div>
+                                </div>
+                                <div class="pt-space-sm">
+                                    <button
+                                        class="font-title-sm text-title-sm px-space-lg py-space-sm rounded-lg bg-secondary text-on-secondary hover:opacity-90 transition-all flex items-center gap-space-xs"
+                                        onclick="prefillAndScrollToForm('Preincubación')">
+                                        <span class="">Evaluar encaje en Preincubación</span>
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Stage Right Column: Highlights & Pillars -->
+                            <div
+                                class="lg:col-span-5 flex flex-col gap-space-md justify-between bg-surface-container-low rounded-lg p-space-md">
+                                <div>
+                                    <h4 class="font-title-sm text-title-sm text-on-surface mb-space-sm">Necesidades que
+                                        resuelve ANDES en esta etapa:</h4>
+                                    <ul
+                                        class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Comprensión real del problema y tamaño potencial de
+                                                oportunidad.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Definición clara del cliente objetivo mediante Customer
+                                                Discovery.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Asesoría metodológica personalizada con mentores de
+                                                innovación de Laboral Kutxa.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Talleres prácticos de Business Model Canvas, diseño lean y
+                                                pitch inicial.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="p-space-sm rounded bg-surface-container-lowest flex items-center justify-between">
+                                    <div>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Hito de
+                                            salida:</span>
+                                        <p class="font-title-sm text-title-sm text-on-surface">Validación de encaje
+                                            problema-solución</p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-secondary">verified_user</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TAB PANEL 2: INCUBACIÓN (Hidden by default) -->
+                        <div class="hidden grid grid-cols-1 lg:grid-cols-12 gap-gutter bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl shadow-md"
+                            id="stage-panel-inc">
+                            <div class="lg:col-span-7 flex flex-col gap-space-md">
+                                <div class="flex flex-wrap items-center gap-space-sm">
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-secondary-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-tertiary"></span> Incubación
+                                    </span>
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">Duración:
+                                        6 meses</span>
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">Núcleo
+                                        del Modelo ANDES</span>
+                                </div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-surface">Construir y Validar</h3>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                                    El corazón operativo del programa. Si ya cuentas con un prototipo o producto mínimo
+                                    viable, te ayudamos a probarlo en el mercado real, contrastar unit economics y
+                                    consolidar la viabilidad técnica y legal.
+                                </p>
+                                <div class="flex flex-col gap-space-xs">
+                                    <h4 class="font-title-sm text-title-sm text-on-surface uppercase tracking-wide">¿A
+                                        quién está dirigido?</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">
+                                        Emprendimientos con MVP, equipos con desarrollos de software o prototipos
+                                        físicos iniciales y spin-offs que precisan testeo empírico con clientes beta.
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+                                    <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                                        <span
+                                            class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-tertiary">build</span>
+                                            Objetivo Clave
+                                        </span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Construir,
+                                            testear y validar la solución y su modelo económico de forma iterativa y
+                                            rigurosa.</span>
+                                    </div>
+                                    <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                                        <span
+                                            class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-tertiary">fact_check</span>
+                                            Entregable Final
+                                        </span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">PMV validado con
+                                            métricas de uso reales y plan financiero auditado por Laboral Kutxa.</span>
+                                    </div>
+                                </div>
+                                <div class="pt-space-sm">
+                                    <button
+                                        class="font-title-sm text-title-sm px-space-lg py-space-sm rounded-lg bg-tertiary text-on-tertiary hover:opacity-90 transition-all flex items-center gap-space-xs"
+                                        onclick="prefillAndScrollToForm('Incubación')">
+                                        <span class="">Evaluar encaje en Incubación</span>
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="lg:col-span-5 flex flex-col gap-space-md justify-between bg-surface-container-low rounded-lg p-space-md">
+                                <div>
+                                    <h4 class="font-title-sm text-title-sm text-on-surface mb-space-sm">Necesidades que
+                                        resuelve ANDES en esta etapa:</h4>
+                                    <ul
+                                        class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Pruebas controladas con usuarios e implantación en entornos
+                                                reales.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Auditoría de modelo de costes, pricing y viabilidad
+                                                financiera.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Acceso a red técnica de partners de desarrollo, laboratorios
+                                                y fabricación.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Preparación jurídica, pacto de socios y régimen de propiedad
+                                                industrial.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="p-space-sm rounded bg-surface-container-lowest flex items-center justify-between">
+                                    <div>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Hito de
+                                            salida:</span>
+                                        <p class="font-title-sm text-title-sm text-on-surface">Validación de encaje
+                                            producto-mercado</p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-tertiary">check_circle</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TAB PANEL 3: ACELERACIÓN (Hidden by default) -->
+                        <div class="hidden grid grid-cols-1 lg:grid-cols-12 gap-gutter bg-surface-container-lowest rounded-xl p-space-lg lg:p-space-xl shadow-md"
+                            id="stage-panel-ace">
+                            <div class="lg:col-span-7 flex flex-col gap-space-md">
+                                <div class="flex flex-wrap items-center gap-space-sm">
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1">
+                                        <span class="w-2 h-2 rounded-full bg-primary-container"></span> Aceleración
+                                    </span>
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">Duración:
+                                        3 meses</span>
+                                    <span
+                                        class="px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md">Alta
+                                        Intensidad Corporativa</span>
+                                </div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-surface">Explotar y Potenciar</h3>
+                                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                                    Diseñado para proyectos con producto funcional y tracción demostrable. Conectamos tu
+                                    solución con unidades de negocio de Laboral Kutxa y cooperativas asociadas para
+                                    escalar ventas e inversión.
+                                </p>
+                                <div class="flex flex-col gap-space-xs">
+                                    <h4 class="font-title-sm text-title-sm text-on-surface uppercase tracking-wide">¿A
+                                        quién está dirigido?</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant">
+                                        Startups constituidas, scaleups tempranas y empresas innovadoras con facturación
+                                        o base recurrente de clientes buscando saltos cuantitativos.
+                                    </p>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+                                    <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                                        <span
+                                            class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-primary-container">trending_up</span>
+                                            Objetivo Clave
+                                        </span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Impulsar
+                                            tracción comercial masiva, pilotos industriales y captación de fondos
+                                            institucionales.</span>
+                                    </div>
+                                    <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                                        <span
+                                            class="font-title-sm text-title-sm text-on-surface flex items-center gap-1">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-primary-container">handshake</span>
+                                            Entregable Final
+                                        </span>
+                                        <span class="font-body-sm text-body-sm text-on-surface-variant">Piloto comercial
+                                            en marcha y presentación formal ante el Comité de Inversión LK.</span>
+                                    </div>
+                                </div>
+                                <div class="pt-space-sm">
+                                    <button
+                                        class="font-title-sm text-title-sm px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-space-xs"
+                                        onclick="prefillAndScrollToForm('Aceleración')">
+                                        <span class="">Evaluar encaje en Aceleración</span>
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="lg:col-span-5 flex flex-col gap-space-md justify-between bg-surface-container-low rounded-lg p-space-md">
+                                <div>
+                                    <h4 class="font-title-sm text-title-sm text-on-surface mb-space-sm">Necesidades que
+                                        resuelve ANDES en esta etapa:</h4>
+                                    <ul
+                                        class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Pruebas piloto remuneradas con empresas del grupo
+                                                cooperativo.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Estructuración y cierre de rondas Seed / Series A.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Soporte de compliance regulatorio, solvencia e
+                                                internacionalización.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs">
+                                            <span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">check_circle</span>
+                                            <span class="">Visibilidad institucional de marca en eventos y foros de
+                                                referencia.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="p-space-sm rounded bg-surface-container-lowest flex items-center justify-between">
+                                    <div>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">Hito de
+                                            salida:</span>
+                                        <p class="font-title-sm text-title-sm text-on-surface">Escalado comercial
+                                            sostenido</p>
+                                    </div>
+                                    <span class="material-symbols-outlined text-primary-container">rocket</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- RECORRIDO VISUAL ANDES (ROADMAP / JOURNEY MAP) -->
+            <section class="w-full bg-surface-container-low py-space-xl lg:py-24">
+                <div
+                    class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex flex-col gap-space-xl">
+                    <div class="text-center max-w-2xl mx-auto flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-md text-label-md text-primary-container uppercase tracking-wider font-semibold">Recorrido
+                            del Emprendedor</span>
+                        <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">Tu
+                            Trayectoria en el Modelo ANDES</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Un itinerario estructurado con
+                            compuertas de paso (gateways) transparentes y acompañamiento continuado.</p>
+                    </div>
+                    <!-- Steps Journey -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md relative">
+                        <!-- Milestone 1 -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold">1</span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Día 1</span>
+                            </div>
+                            <h3 class="font-title-md text-title-md text-on-surface">Diagnóstico y Entrada</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Evaluación del estado del
+                                proyecto para determinar la etapa idónea sin trámites redundantes.</p>
+                        </div>
+                        <!-- Milestone 2 -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-title-sm text-title-sm flex items-center justify-center font-bold">2</span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Mes 1 - 3</span>
+                            </div>
+                            <h3 class="font-title-md text-title-md text-on-surface">Inmersión &amp; Mentoría</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Asignación de mentor principal,
+                                definición de OKRs y activación del plan de trabajo específico.</p>
+                        </div>
+                        <!-- Milestone 3 -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-secondary-container text-tertiary font-title-sm text-title-sm flex items-center justify-center font-bold">3</span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Mes 3 - 6</span>
+                            </div>
+                            <h3 class="font-title-md text-title-md text-on-surface">Comprobación en Mercado</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Testeo con usuarios o clientes
+                                potenciales y contrastación del modelo de negocio en condiciones reales.</p>
+                        </div>
+                        <!-- Milestone 4 -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-secondary-container text-tertiary font-title-sm text-title-sm flex items-center justify-center font-bold">4</span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Mes 6 - 9</span>
+                            </div>
+                            <h3 class="font-title-md text-title-md text-on-surface">Piloto Corporativo</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Oportunidad de despliegue con
+                                entidades de la red de Laboral Kutxa para validar escalabilidad.</p>
+                        </div>
+                        <!-- Milestone 5 -->
+                        <div
+                            class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="w-8 h-8 rounded-full bg-primary-fixed text-primary-container font-title-sm text-title-sm flex items-center justify-center font-bold">5</span>
+                                <span class="font-label-sm text-label-sm text-on-surface-variant">Mes 12</span>
+                            </div>
+                            <h3 class="font-title-md text-title-md text-on-surface">Graduación &amp; Capital</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">Acceso a foros de inversión,
+                                líneas de financiación exclusivas y seguimiento alumni.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- BENEFICIOS CLAVE DEL PROGRAMA -->
+            <section class="w-full bg-surface py-space-xl lg:py-28 relative overflow-hidden" id="beneficios">
+                <div
+                    class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex flex-col gap-space-xl">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+                        <div class="max-w-2xl flex flex-col gap-space-xs"><span
+                                class="font-label-md text-label-md text-primary-container uppercase tracking-wider font-semibold">Propuesta
+                                de Valor Integral</span>
+                            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                                Beneficios y Recursos del Modelo ANDES</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Financiación directa a fondo
+                                perdido por modalidad combinada con el respaldo estratégico e institucional de Laboral
+                                Kutxa.</p>
+                        </div>
+                        <!-- <div
+                            class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high">
+                            <span
+                                class="material-symbols-outlined text-primary-container text-[20px]">account_balance_wallet</span><span
+                                class="font-label-md text-label-md text-on-surface font-semibold">Hasta 75.000 € en
+                                presupuestos asignados</span>
+                        </div> -->
+                    </div><!-- PARTE 1: BENEFICIOS ESPECÍFICOS Y PRESUPUESTO POR MODALIDAD -->
+                    <div class="flex flex-col gap-space-lg">
+                        <div class="flex flex-col gap-space-xs">
+                            <div
+                                class="inline-flex items-center gap-1 text-primary-container font-label-md text-label-md uppercase tracking-wider font-semibold">
+                                <span class="w-2 h-2 rounded-full bg-primary-container"></span> Parte 1
+                            </div>
+                            <h3 class="font-headline-lg text-headline-lg text-on-surface">Beneficios Específicos y
+                                Presupuesto por Modalidad</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Dotación
+                                presupuestaria específica y objetivos adaptados al estadio y ambición de cada
+                                iniciativa.</p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter"><!-- CARD 1: PREINCUBACIÓN -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow relative overflow-hidden">
+                                <div class="flex flex-col gap-space-md">
+                                    <div class="flex items-center justify-between"><span
+                                            class="px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
+                                                class="w-2 h-2 rounded-full bg-secondary"></span>
+                                            Preincubación</span><span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-on-surface-variant font-semibold">3
+                                            Meses</span></div>
+                                    <div class="flex flex-col gap-space-xs"><span
+                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Presupuesto
+                                            asignado</span>
+                                        <div class="flex items-baseline gap-space-xs">
+                                            <span
+                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-secondary font-bold">2.250
+                                                €</span>
+                                            <span class="font-label-sm text-label-sm text-on-surface-variant">/
+                                                proyecto</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-space-xs pt-space-xs">
+                                        <h4 class="font-title-md text-title-md text-on-surface">Exploración y Validación
+                                            de la Idea</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Primera experiencia
+                                            de emprendimiento real orientada a la resolución de retos en el sector
+                                            financiero y su ecosistema cooperativo.</p>
+                                    </div>
+                                    <ul
+                                        class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">restaurant</span><span
+                                                class="">Apoyo para alimentación / manutención durante el
+                                                programa.</span></li>
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">lightbulb</span><span
+                                                class="">Validación inicial de la hipótesis y descubrimiento de
+                                                cliente.</span></li>
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">co_present</span><span
+                                                class="">Tutorías de negocio continuadas y metodologías Lean.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pt-space-sm"><button
+                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-all flex items-center justify-center gap-space-xs"
+                                        onclick="prefillAndScrollToForm('Preincubación')"><span class="">Postular a
+                                            Preincubación</span><span
+                                            class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+                                </div>
+                            </div><!-- CARD 2: INCUBACIÓN -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow relative overflow-hidden">
+                                <div class="flex flex-col gap-space-md">
+                                    <div class="flex items-center justify-between"><span
+                                            class="px-space-sm py-space-xs rounded-full bg-secondary-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
+                                                class="w-2 h-2 rounded-full bg-tertiary"></span> Incubación</span><span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-tertiary font-semibold">6
+                                            Meses</span></div>
+                                    <div class="flex flex-col gap-space-xs"><span
+                                            class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-semibold">Presupuesto
+                                            asignado</span>
+                                        <div class="flex items-baseline gap-space-xs"><span
+                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-tertiary font-bold">10.000
+                                                €</span><span
+                                                class="font-label-sm text-label-sm text-on-surface-variant">/
+                                                proyecto</span></div>
+                                    </div>
+                                    <div class="flex flex-col gap-space-xs pt-space-xs">
+                                        <h4 class="font-title-md text-title-md text-on-surface">Desarrollo y Testeo de
+                                            MVP</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Financiación y
+                                            acompañamiento intensivo para la construcción del Producto Mínimo Viable y
+                                            validación empírica en el mercado.</p>
+                                    </div>
+                                    <ul
+                                        class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">code</span><span
+                                                class="">Desarrollo técnico, prototipado y pruebas de concepto.</span>
+                                        </li>
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">experiment</span><span
+                                                class="">Experimentos con usuarios y métricas de tracción
+                                                iniciales.</span></li>
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">payments</span><span
+                                                class="">Recursos financieros directos para desarrollo y pruebas.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="pt-space-sm"><button
+                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-tertiary text-on-tertiary hover:opacity-90 transition-all flex items-center justify-center gap-space-xs"
+                                        onclick="prefillAndScrollToForm('Incubación')"><span class="">Postular a
+                                            Incubación</span><span
+                                            class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+                                </div>
+                            </div><!-- CARD 3: ACELERACIÓN -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow relative overflow-hidden">
+                                <div class="flex flex-col gap-space-md">
+                                    <div class="flex items-center justify-between"><span
+                                            class="px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
+                                                class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                            Aceleración</span><span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-primary-container font-semibold">3
+                                            Meses</span></div>
+                                    <div class="flex flex-col gap-space-xs"><span
+                                            class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider font-semibold">Presupuesto
+                                            asignado</span>
+                                        <div class="flex items-baseline gap-space-xs"><span
+                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container font-bold">17.500
+                                                €</span><span
+                                                class="font-label-sm text-label-sm text-on-surface-variant">/
+                                                proyecto</span></div>
+                                    </div>
+                                    <div class="flex flex-col gap-space-xs pt-space-xs">
+                                        <h4 class="font-title-md text-title-md text-on-surface">Pilotos Corporativos y
+                                            Escalado</h4>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Desarrollo e
+                                            implementación de proyectos piloto ejecutables directamente con Laboral
+                                            Kutxa y aceleración de volumen de negocio.</p>
+                                    </div>
+                                    <ul
+                                        class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">rocket_launch</span><span
+                                                class="">Pilotos ejecutables y remunerados directamente con Laboral
+                                                Kutxa.</span></li>
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">trending_up</span><span
+                                                class="">Acceso a inversión y canales de venture capital LK.</span></li>
+                                        <li class="flex items-start gap-space-xs"><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">corporate_fare</span><span
+                                                class="">Escalado comercial y apertura a la red cooperativa.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="pt-space-sm"><button
+                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center justify-center gap-space-xs"
+                                        onclick="prefillAndScrollToForm('Aceleración')"><span class="">Postular a
+                                            Aceleración</span><span
+                                            class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- PARTE 2: BENEFICIOS TRANSVERSALES (8 OFICIALES) -->
+                    <div class="flex flex-col gap-space-lg pt-space-md">
+                        <div class="flex flex-col gap-space-xs">
+                            <div
+                                class="inline-flex items-center gap-1 text-primary-container font-label-md text-label-md uppercase tracking-wider font-semibold">
+                                <span class="w-2 h-2 rounded-full bg-primary-container"></span> Parte 2
+                            </div>
+                            <h3 class="font-headline-lg text-headline-lg text-on-surface">Beneficios Transversales</h3>
+                            <p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Comunes a las tres
+                                modalidades para impulsar el crecimiento, la solidez metodológica y la integración en el
+                                tejido empresarial vasco.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                            <!-- Beneficio 1: Networking -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+                                        <span class="material-symbols-outlined text-[26px]">groups</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-secondary font-semibold">01</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Networking</h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Acceso a redes de
+                                        contacto con profesionales, emprendedores, empresas y agentes del ecosistema de
+                                        innovación.</p>
+                                </div>
+                            </div><!-- Beneficio 2: Formación especializada -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-tertiary">
+                                        <span class="material-symbols-outlined text-[26px]">school</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-tertiary font-semibold">02</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Formación especializada
+                                        </h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Actividades formativas
+                                        y talleres adaptados al nivel de madurez y a las necesidades de cada modalidad.
+                                    </p>
+                                </div>
+                            </div><!-- Beneficio 3: Espacios de trabajo -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+                                        <span class="material-symbols-outlined text-[26px]">domain</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-secondary font-semibold">03</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Espacios de trabajo</h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Disponibilidad de
+                                        instalaciones físicas para desarrollar proyectos, mantener reuniones y realizar
+                                        actividades colaborativas.</p>
+                                </div>
+                            </div><!-- Beneficio 4: Conexión con el ecosistema -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container">
+                                        <span class="material-symbols-outlined text-[26px]">hub</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-primary-container font-semibold">04</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Conexión con el
+                                            ecosistema</h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Vinculación con el
+                                        entorno empresarial de Laboral Kutxa y con los principales agentes de innovación
+                                        y emprendimiento de Bizkaia.</p>
+                                </div>
+                            </div><!-- Beneficio 5: Acceso al entorno empresarial -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+                                        <span class="material-symbols-outlined text-[26px]">storefront</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-secondary font-semibold">05</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Acceso al entorno
+                                            empresarial</h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Posibilidad de conocer
+                                        el funcionamiento de Laboral Kutxa, sus necesidades y los procesos relevantes
+                                        para el desarrollo de las soluciones, respetando las condiciones de
+                                        confidencialidad y acceso a la información.</p>
+                                </div>
+                            </div><!-- Beneficio 6: Estudios y análisis -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-tertiary">
+                                        <span class="material-symbols-outlined text-[26px]">query_stats</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-tertiary font-semibold">06</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Estudios y análisis</h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Acompañamiento en la
+                                        realización de estudios de mercado, análisis de oportunidades y evaluaciones de
+                                        viabilidad.</p>
+                                </div>
+                            </div><!-- Beneficio 7: Oportunidades de vinculación empresarial -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container">
+                                        <span class="material-symbols-outlined text-[26px]">handshake</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-primary-container font-semibold">07</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Oportunidades de
+                                            vinculación empresarial</h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Posibilidad de explorar
+                                        acuerdos de colaboración, creación de nuevas sociedades o integración de
+                                        proyectos en la organización.</p>
+                                </div>
+                            </div><!-- Beneficio 8: Oportunidades laborales -->
+                            <div
+                                class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm justify-between hover:shadow-md transition-shadow">
+                                <div class="flex flex-col gap-space-sm">
+                                    <div
+                                        class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface">
+                                        <span class="material-symbols-outlined text-[26px]">badge</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1"><span
+                                            class="font-label-sm text-label-sm text-secondary font-semibold">08</span>
+                                        <h4 class="font-title-md text-title-md text-on-surface">Oportunidades laborales
+                                        </h4>
+                                    </div>
+                                    <p class="font-body-sm text-body-sm text-on-surface-variant">Posibilidad de
+                                        establecer vínculos profesionales con Laboral Kutxa mediante futuras
+                                        contrataciones, en función de las necesidades de la organización y del perfil de
+                                        los participantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- TEST DE DIAGNÓSTICO INTERACTIVO — "DESCUBRE TU ETAPA" (COMPONENTE ESTRELLA) -->
+            <section class="w-full bg-surface-container-low py-space-xl lg:py-24" id="diagnostico">
+                <div class="max-w-[1000px] mx-auto px-margin-mobile md:px-margin">
+                    <!-- Diagnostic Card Container -->
+                    <div
+                        class="w-full bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-xl flex flex-col gap-space-lg">
+                        <!-- Diagnostic Header -->
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+                            <div>
+                                <span
+                                    class="font-label-md text-label-md text-primary-container font-semibold uppercase tracking-wider">Test
+                                    de Diagnóstico Rápido</span>
+                                <h2 class="font-headline-lg text-headline-lg text-on-surface">Descubre tu etapa
+                                    recomendada en ANDES</h2>
+                            </div>
+                            <div
+                                class="flex items-center gap-space-xs bg-surface-container px-space-sm py-space-xs rounded-full self-start md:self-auto">
+                                <span class="font-label-sm text-label-sm font-semibold text-on-surface"
+                                    id="quiz-step-indicator">Paso 1 de 3</span>
+                            </div>
+                        </div>
+                        <!-- Progress Track -->
+                        <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                            <div class="h-full bg-primary-container transition-all duration-300 w-1/3"
+                                id="quiz-progress-bar"></div>
+                        </div>
+                        <!-- QUIZ QUESTIONS WRAPPER -->
+                        <div class="flex flex-col gap-space-md" id="quiz-questions-container">
+                            <!-- QUESTION 1 -->
+                            <div class="flex flex-col gap-space-md" id="quiz-q1">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">1. ¿En qué estado se
+                                    encuentra tu proyecto?</h3>
+                                <div class="flex flex-col gap-space-xs">
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(1, 'A')">
+                                        <input class="mt-1 accent-primary-container" name="q1" type="radio" value="A">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Tengo una idea o
+                                                he identificado un problema que quiero resolver</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Aún no
+                                                existe una versión funcional ni prototipo materializado.</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(1, 'B')">
+                                        <input class="mt-1 accent-primary-container" name="q1" type="radio" value="B">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Tengo un
+                                                prototipo, PMV/MVP o primera versión desarrollada</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Existe una
+                                                solución inicial y necesito testearla formalmente con usuarios.</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(1, 'C')">
+                                        <input class="mt-1 accent-primary-container" name="q1" type="radio" value="C">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Tengo un producto
+                                                en el mercado con clientes o tracción inicial</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Cuento con
+                                                facturación o base de usuarios y busco escalar y hacer pilotos
+                                                corporativos.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- QUESTION 2 -->
+                            <div class="hidden flex flex-col gap-space-md" id="quiz-q2">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">2. ¿Cómo está conformado
+                                    tu equipo actualmente?</h3>
+                                <div class="flex flex-col gap-space-xs">
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(2, 'A')">
+                                        <input class="mt-1 accent-primary-container" name="q2" type="radio" value="A">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Soy emprendedor
+                                                individual o estudiante con vocación de emprender</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Lidero la
+                                                iniciativa en solitario o busco completar el equipo fundador.</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(2, 'B')">
+                                        <input class="mt-1 accent-primary-container" name="q2" type="radio" value="B">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Somos un equipo
+                                                fundador en fase de desarrollo o validación</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Contamos con
+                                                perfiles complementarios (negocio y técnica/diseño).</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(2, 'C')">
+                                        <input class="mt-1 accent-primary-container" name="q2" type="radio" value="C">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Somos una empresa
+                                                o startup legalmente constituida</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Estructura
+                                                jurídica formal, equipo dedicado y operaciones en marcha.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- QUESTION 3 -->
+                            <div class="hidden flex flex-col gap-space-md" id="quiz-q3">
+                                <h3 class="font-headline-sm text-headline-sm text-on-surface">3. ¿Cuál es tu principal
+                                    necesidad en este momento?</h3>
+                                <div class="flex flex-col gap-space-xs">
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(3, 'A')">
+                                        <input class="mt-1 accent-primary-container" name="q3" type="radio" value="A">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Definir mi
+                                                propuesta de valor y recibir orientación metodológica</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Validar que
+                                                el problema existe y que la propuesta tiene sentido antes de
+                                                invertir.</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(3, 'B')">
+                                        <input class="mt-1 accent-primary-container" name="q3" type="radio" value="B">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Validar mi modelo
+                                                de negocio y probar el prototipo con usuarios</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Conocer
+                                                métricas de adopción, pulir el prototipo y asegurar viabilidad
+                                                económica.</span>
+                                        </div>
+                                    </label>
+                                    <label
+                                        class="quiz-option-card flex items-start gap-space-sm p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all"
+                                        onclick="selectOption(3, 'C')">
+                                        <input class="mt-1 accent-primary-container" name="q3" type="radio" value="C">
+                                        <div class="flex flex-col">
+                                            <span class="font-title-sm text-title-sm text-on-surface">Escalar
+                                                comercialmente y buscar alianzas estratégicas con Laboral Kutxa</span>
+                                            <span class="font-body-sm text-body-sm text-on-surface-variant">Lanzar
+                                                pilotos, captar inversión y acelerar la cuota de mercado.</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Quiz Navigation Controls -->
+                        <div class="flex items-center justify-between pt-space-sm" id="quiz-controls">
+                            <button
+                                class="hidden font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-all flex items-center gap-1"
+                                id="quiz-prev-btn" onclick="prevQuizStep()">
+                                <span class="material-symbols-outlined text-[16px]">arrow_back</span> Anterior
+                            </button>
+                            <div class="ml-auto">
+                                <button
+                                    class="font-title-sm text-title-sm px-space-lg py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-1"
+                                    id="quiz-next-btn" onclick="nextQuizStep()">
+                                    Siguiente <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- DYNAMIC RESULT SCREEN (Hidden initially) -->
+                        <div class="hidden flex flex-col gap-space-lg" id="quiz-result-view">
+                            <!-- Result Header Banner -->
+                            <div class="p-space-lg rounded-xl flex flex-col gap-space-xs" id="result-badge-container">
+                                <span class="font-label-md text-label-md uppercase tracking-wider font-bold"
+                                    id="result-stage-tag"></span>
+                                <h3 class="font-headline-lg text-headline-lg" id="result-stage-title"></h3>
+                                <p class="font-body-md text-body-md" id="result-stage-desc"></p>
+                            </div>
+                            <!-- Key Deliverables for this Stage -->
+                            <div class="flex flex-col gap-space-sm">
+                                <h4 class="font-title-sm text-title-sm text-on-surface uppercase tracking-wide">Qué
+                                    conseguirás durante este periodo:</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm" id="result-stage-bullets">
+                                    <!-- Injected via JavaScript -->
+                                </div>
+                            </div>
+                            <!-- Other stages exploration -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">¿Crees que tu proyecto
+                                    está en otro momento?</span>
+                                <div class="flex items-center gap-space-xs">
+                                    <button
+                                        class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
+                                        onclick="overrideStageResult('Preincubación')">Ver Preincubación</button>
+                                    <button
+                                        class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
+                                        onclick="overrideStageResult('Incubación')">Ver Incubación</button>
+                                    <button
+                                        class="font-label-sm text-label-sm px-space-xs py-1 rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
+                                        onclick="overrideStageResult('Aceleración')">Ver Aceleración</button>
+                                </div>
+                            </div>
+                            <!-- Final CTA to Form -->
+                            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+                                <button
+                                    class="font-title-sm text-title-sm px-space-lg py-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-space-xs shadow-md"
+                                    id="result-apply-cta" onclick="applyWithRecommendedStage()">
+                                    <span class="">Quiero postularme a esta etapa</span>
+                                    <span class="material-symbols-outlined text-[18px]">send</span>
+                                </button>
+                                <button
+                                    class="font-title-sm text-title-sm px-space-md py-space-md rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all"
+                                    onclick="resetQuiz()">
+                                    Repetir diagnóstico
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- FORMULARIO DE POSTULACIÓN INTEGRADO -->
+            <section class="w-full bg-surface py-space-xl lg:py-24" id="contacto">
+                <div class="max-w-[900px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-lg">
+                    <div class="text-center flex flex-col gap-space-xs max-w-xl mx-auto">
+                        <span
+                            class="font-label-md text-label-md text-primary-container uppercase tracking-wider font-semibold">Postulación
+                            Directa</span>
+                        <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                            Comienza tu viaje en ANDES</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Completa la información básica de
+                            tu iniciativa. Nuestro equipo técnico evaluará tu encaje y se pondrá en contacto contigo.
+                        </p>
+                    </div>
+                    <!-- Application Form Container -->
+                    <form
+                        class="w-full bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-md flex flex-col gap-space-md"
+                        id="application-form" onsubmit="handleFormSubmit(event)">
+                        <!-- Stage Pre-selector -->
+                        <div class="flex flex-col gap-space-xs">
+                            <label class="font-title-sm text-title-sm text-on-surface">Etapa a la que te
+                                postulas</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs">
+                                <label
+                                    class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container">
+                                    <input checked="" class="accent-primary-container" id="form-stage-pre"
+                                        name="form_stage" type="radio" value="Preincubación">
+                                    <span class="font-body-md text-body-md text-on-surface">Preincubación (3m)</span>
+                                </label>
+                                <label
+                                    class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container">
+                                    <input class="accent-primary-container" id="form-stage-inc" name="form_stage"
+                                        type="radio" value="Incubación">
+                                    <span class="font-body-md text-body-md text-on-surface">Incubación (6m)</span>
+                                </label>
+                                <label
+                                    class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container">
+                                    <input class="accent-primary-container" id="form-stage-ace" name="form_stage"
+                                        type="radio" value="Aceleración">
+                                    <span class="font-body-md text-body-md text-on-surface">Aceleración (3m)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Name & Email -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                            <div class="flex flex-col gap-1">
+                                <label class="font-title-sm text-title-sm text-on-surface" for="applicant-name">Nombre y
+                                    apellidos *</label>
+                                <input
+                                    class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
+                                    id="applicant-name" placeholder="Ej. Mikel Arana Goiri" required="" type="text">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="font-title-sm text-title-sm text-on-surface" for="applicant-email">Correo
+                                    electrónico corporativo / profesional *</label>
+                                <input
+                                    class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
+                                    id="applicant-email" placeholder="mikel@ejemplo.com" required="" type="email">
+                            </div>
+                        </div>
+                        <!-- Phone & Project Name -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+                            <div class="flex flex-col gap-1">
+                                <label class="font-title-sm text-title-sm text-on-surface"
+                                    for="applicant-phone">Teléfono de contacto *</label>
+                                <input
+                                    class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
+                                    id="applicant-phone" placeholder="+34 600 000 000" required="" type="tel">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="font-title-sm text-title-sm text-on-surface" for="project-name">Nombre del
+                                    proyecto o startup *</label>
+                                <input
+                                    class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
+                                    id="project-name" placeholder="Ej. CircularTech Solutions" required="" type="text">
+                            </div>
+                        </div>
+                        <!-- Web or LinkedIn -->
+                        <div class="flex flex-col gap-1">
+                            <label class="font-title-sm text-title-sm text-on-surface" for="project-link">Sitio web o
+                                LinkedIn del fundador / proyecto (opcional)</label>
+                            <input
+                                class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
+                                id="project-link" placeholder="https://linkedin.com/in/... o https://tusitio.es"
+                                type="url">
+                        </div>
+                        <!-- Description -->
+                        <div class="flex flex-col gap-1">
+                            <label class="font-title-sm text-title-sm text-on-surface" for="project-desc">Breve
+                                descripción de la propuesta y estado actual *</label>
+                            <textarea
+                                class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md resize-none"
+                                id="project-desc"
+                                placeholder="Explica en 3 o 4 líneas cuál es el problema que resuelves, tu solución tecnológica y el punto en el que os encontráis hoy..."
+                                required="" rows="4"></textarea>
+                        </div>
+                        <!-- GDPR Consent -->
+                        <label class="flex items-start gap-space-xs cursor-pointer">
+                            <input class="mt-1 accent-primary-container" required="" type="checkbox">
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">
+                                He leído y acepto la <a class="text-primary-container underline" href="#">política de
+                                    privacidad y tratamiento de datos</a> de Laboral Kutxa para la gestión de mi
+                                postulación en el Modelo ANDES.
+                            </span>
+                        </label>
+                        <!-- Submit Button -->
+                        <div class="pt-space-xs">
+                            <button
+                                class="w-full py-space-md px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-title-sm text-title-sm transition-all shadow-md flex items-center justify-center gap-space-xs"
+                                type="submit">
+                                <span class="">Enviar postulación al Modelo ANDES</span>
+                                <span class="material-symbols-outlined text-[18px]">send</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- SUCCESS NOTIFICATION MODAL -->
+            <div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/60 backdrop-blur-sm hidden"
+                id="success-modal">
+                <div
+                    class="bg-surface-container-lowest max-w-lg w-full rounded-xl p-space-xl shadow-2xl flex flex-col gap-space-md items-center text-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+                        <span class="material-symbols-outlined text-[36px]">check_circle</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-surface">¡Postulación recibida con éxito!</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Gracias por tu interés en el Modelo ANDES. Hemos recibido la información de tu proyecto. El
+                        equipo de innovación abierta de Laboral Kutxa revisará tu solicitud y se pondrá en contacto
+                        contigo en un plazo máximo de 5 días hábiles.
+                    </p>
+                    <button
+                        class="w-full py-space-xs px-space-md rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-primary transition-all"
+                        onclick="closeSuccessModal()">
+                        Entendido, volver a la página
+                    </button>
+                </div>
+            </div>
+            <!-- SECCIÓN DE PREGUNTAS FRECUENTES (FAQ ACORDEÓN INTERACTIVO) -->
+            <section class="w-full bg-surface-container-low py-space-xl lg:py-24" id="faq">
+                <div class="max-w-[1000px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
+                    <div class="text-center max-w-xl mx-auto flex flex-col gap-space-xs">
+                        <span
+                            class="font-label-md text-label-md text-primary-container uppercase tracking-wider font-semibold">Resolución
+                            de Dudas</span>
+                        <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface">
+                            Preguntas Frecuentes</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Todo lo que necesitas saber antes
+                            de dar el paso con el Modelo ANDES.</p>
+                    </div>
+                    <!-- FAQ Accordion List -->
+                    <div class="flex flex-col gap-space-xs">
+                        <!-- Item 1 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Quién puede participar en el
+                                    Modelo ANDES?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                El programa está abierto a emprendedores individuales, equipos multidisciplinares,
+                                spin-offs universitarias, investigadores y startups ya constituidas que cuenten con una
+                                vocación transformadora, preferentemente vinculadas a los sectores tecnológico,
+                                industrial, agroalimentario, cooperativo o de sostenibilidad.
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Tengo que empezar
+                                    obligatoriamente en Preincubación?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                No. Esa es la esencia de ANDES: "Entra donde está tu proyecto". Si ya tienes un
+                                prototipo validado, puedes incorporarte directamente en Incubación. Si ya estás
+                                facturando y buscas escala, accedes directamente a Aceleración.
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Cuánto dura cada etapa y
+                                    cuánto tiempo requiere?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                Preincubación dura 3 meses (compatibles con estudios o empleo previo), Incubación dura 6
+                                meses (dedicación semi-intensiva) y Aceleración dura 3 meses (alta intensidad
+                                operativa). El cómputo máximo acumulable en el programa es de 1 año.
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Qué ocurre si mi proyecto
+                                    evoluciona o cambia de etapa durante el año?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                El comité de seguimiento evalúa en cada compuerta de paso (gate) si el proyecto ha
+                                alcanzado los hitos para promocionar de manera natural a la siguiente fase sin
+                                interrupciones.
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Es necesario tener una
+                                    empresa constituida formalmente?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                Para Preincubación e Incubación no es necesario contar con forma jurídica previa. De
+                                hecho, te asesoramos en los trámites de constitución óptimos (incluyendo modelo
+                                cooperativo o sociedad limitada). Para la etapa de Aceleración sí se requiere figura
+                                jurídica mercantil activa.
+                            </div>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Qué ocurre con la propiedad
+                                    intelectual (PI) de mi proyecto?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                La propiedad intelectual y técnica pertenece al 100% a los emprendedores. Laboral Kutxa
+                                actúa como facilitador e impulsor del ecosistema y no exige cesión de patentes ni equity
+                                automático por incorporarse al programa.
+                            </div>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Puedo participar si todavía
+                                    soy estudiante universitario o de FP?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                ¡Por supuesto! El programa cuenta con una estrecha vinculación con universidades y
+                                centros de formación profesional. La etapa de Preincubación está diseñada con horarios y
+                                ritmos compatibles con la actividad académica.
+                            </div>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="faq-item rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+                            <button class="w-full p-space-md flex items-center justify-between text-left gap-space-sm"
+                                onclick="toggleFaq(this)">
+                                <span class="font-title-md text-title-md text-on-surface">¿Cómo funciona el proceso de
+                                    selección y admisión?</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant transition-transform">expand_more</span>
+                            </button>
+                            <div
+                                class="faq-answer hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md">
+                                El proceso consta de 3 fases: envío de la postulación inicial mediante el formulario
+                                web, una sesión de screening técnico de 30 minutos con el equipo de innovación, y la
+                                resolución final comunicada formalmente en un plazo inferior a 10 días laborables.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- JAVASCRIPT LOGIC -->
+            <script>
+                // Tab stage switcher
+                function switchStageTab(stageKey) {
+                    const tabs = ['pre', 'inc', 'ace'];
+                    tabs.forEach(key => {
+                        const panel = document.getElementById(`stage-panel-${key}`);
+                        const btn = document.getElementById(`tab-btn-${key}`);
+                        if (key === stageKey) {
+                            panel.classList.remove('hidden');
+                            btn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+                            btn.classList.remove('text-on-surface-variant');
+                        } else {
+                            panel.classList.add('hidden');
+                            btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+                            btn.classList.add('text-on-surface-variant');
+                        }
+                    });
+                }
+
+                // Scroll helper & prefill
+                function prefillAndScrollToForm(stageName) {
+                    const radio = document.querySelector(`input[name="form_stage"][value="${stageName}"]`);
+                    if (radio) radio.checked = true;
+                    const target = document.getElementById('contacto');
+                    if (target) {
+                        target.scrollIntoView({behavior: 'smooth'});
+                    }
+                }
+
+                // Interactive Quiz State
+                let currentQuizStep = 1;
+                const userAnswers = {q1: null, q2: null, q3: null};
+
+                function selectOption(questionNum, optionValue) {
+                    userAnswers[`q${questionNum}`] = optionValue;
+                }
+
+                function updateQuizView() {
+                    // Manage steps visibility
+                    document.getElementById('quiz-q1').classList.toggle('hidden', currentQuizStep !== 1);
+                    document.getElementById('quiz-q2').classList.toggle('hidden', currentQuizStep !== 2);
+                    document.getElementById('quiz-q3').classList.toggle('hidden', currentQuizStep !== 3);
+
+                    // Update step indicator
+                    document.getElementById('quiz-step-indicator').innerText = `Paso ${currentQuizStep} de 3`;
+
+                    // Update progress bar
+                    const bar = document.getElementById('quiz-progress-bar');
+                    if (currentQuizStep === 1) bar.style.width = '33%';
+                    if (currentQuizStep === 2) bar.style.width = '66%';
+                    if (currentQuizStep === 3) bar.style.width = '100%';
+
+                    // Manage buttons
+                    document.getElementById('quiz-prev-btn').classList.toggle('hidden', currentQuizStep === 1);
+                    const nextBtn = document.getElementById('quiz-next-btn');
+                    if (currentQuizStep === 3) {
+                        nextBtn.innerHTML = 'Ver resultado <span class="material-symbols-outlined text-[16px]">check</span>';
+                    } else {
+                        nextBtn.innerHTML = 'Siguiente <span class="material-symbols-outlined text-[16px]">arrow_forward</span>';
+                    }
+                }
+
+                function nextQuizStep() {
+                    if (!userAnswers[`q${currentQuizStep}`]) {
+                        // default select option A if user clicks directly
+                        userAnswers[`q${currentQuizStep}`] = 'A';
+                    }
+
+                    if (currentQuizStep < 3) {
+                        currentQuizStep++;
+                        updateQuizView();
+                    } else {
+                        showQuizResults();
+                    }
+                }
+
+                function prevQuizStep() {
+                    if (currentQuizStep > 1) {
+                        currentQuizStep--;
+                        updateQuizView();
+                    }
+                }
+
+                let calculatedRecommendedStage = 'Incubación';
+
+                function showQuizResults() {
+                    document.getElementById('quiz-questions-container').classList.add('hidden');
+                    document.getElementById('quiz-controls').classList.add('hidden');
+                    document.getElementById('quiz-result-view').classList.remove('hidden');
+
+                    // Tally answers
+                    let cCount = 0;
+                    let bCount = 0;
+                    let aCount = 0;
+
+                    Object.values(userAnswers).forEach(val => {
+                        if (val === 'C') cCount++;
+                        else if (val === 'B') bCount++;
+                        else aCount++;
+                    });
+
+                    if (cCount >= 2 || userAnswers.q1 === 'C') {
+                        calculatedRecommendedStage = 'Aceleración';
+                    } else if (bCount >= 2 || userAnswers.q1 === 'B') {
+                        calculatedRecommendedStage = 'Incubación';
+                    } else {
+                        calculatedRecommendedStage = 'Preincubación';
+                    }
+
+                    renderStageCard(calculatedRecommendedStage);
+                }
+
+                function renderStageCard(stage) {
+                    calculatedRecommendedStage = stage;
+                    const badgeBox = document.getElementById('result-badge-container');
+                    const tag = document.getElementById('result-stage-tag');
+                    const title = document.getElementById('result-stage-title');
+                    const desc = document.getElementById('result-stage-desc');
+                    const bullets = document.getElementById('result-stage-bullets');
+
+                    if (stage === 'Preincubación') {
+                        badgeBox.className = 'p-space-lg rounded-xl flex flex-col gap-space-xs bg-surface-container text-on-surface';
+                        tag.innerText = 'Etapa Recomendada • 3 Meses';
+                        title.innerText = 'Tu proyecto encaja con: Preincubación';
+                        desc.innerText = 'Por las respuestas que has proporcionado, parece que actualmente te encuentras en una fase de formulación y descubrimiento. Es el momento perfecto para contrastar tu hipótesis antes de construir.';
+                        bullets.innerHTML = `
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">1. Validación de Problema</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Entrevistas a usuarios y mapa de dolores contrastado.</span>
+          </div>
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">2. Definición de Propuesta</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Diseño estructurado del modelo de valor y Canvas.</span>
+          </div>
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">3. Hoja de Ruta Prototipo</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Requisitos técnicos para iniciar el desarrollo del PMV.</span>
+          </div>
+        `;
+                    } else if (stage === 'Incubación') {
+                        badgeBox.className = 'p-space-lg rounded-xl flex flex-col gap-space-xs bg-secondary-container text-on-surface';
+                        tag.innerText = 'Etapa Recomendada • 6 Meses';
+                        title.innerText = 'Tu proyecto encaja con: Incubación';
+                        desc.innerText = 'Cuentas ya con una base conceptual o primer desarrollo. En Incubación te acompañamos a iterar con clientes reales, medir tracción y dejar lista la estructura financiera.';
+                        bullets.innerHTML = `
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">1. Producto Mínimo Viable</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Versión funcional testeada en condiciones reales de uso.</span>
+          </div>
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">2. Métricas & Economía</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Unit economics y validación de disposición al pago.</span>
+          </div>
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">3. Plan Legal & Societario</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Estructuración estatutaria y protección de activos.</span>
+          </div>
+        `;
+                    } else {
+                        badgeBox.className = 'p-space-lg rounded-xl flex flex-col gap-space-xs bg-primary-fixed text-on-surface';
+                        tag.innerText = 'Etapa Recomendada • 3 Meses';
+                        title.innerText = 'Tu proyecto encaja con: Aceleración';
+                        desc.innerText = 'Tienes producto en el mercado o facturación inicial. Tu reto prioritario es el volumen, la escala industrial y las alianzas de negocio con la red corporativa de Laboral Kutxa.';
+                        bullets.innerHTML = `
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">1. Piloto Corporativo LK</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Despliegue comercial con entidades del grupo.</span>
+          </div>
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">2. Financiación e Inversión</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Preparación y acceso a vehículos de capital riesgo.</span>
+          </div>
+          <div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+            <span class="font-title-sm text-title-sm text-on-surface">3. Estrategia de Expansión</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Escalabilidad de ventas B2B y expansión territorial.</span>
+          </div>
+        `;
+                    }
+                }
+
+                function overrideStageResult(stageName) {
+                    renderStageCard(stageName);
+                }
+
+                function applyWithRecommendedStage() {
+                    prefillAndScrollToForm(calculatedRecommendedStage);
+                }
+
+                function resetQuiz() {
+                    currentQuizStep = 1;
+                    userAnswers.q1 = null;
+                    userAnswers.q2 = null;
+                    userAnswers.q3 = null;
+                    document.querySelectorAll('.quiz-option-card input').forEach(input => input.checked = false);
+                    document.getElementById('quiz-result-view').classList.add('hidden');
+                    document.getElementById('quiz-questions-container').classList.remove('hidden');
+                    document.getElementById('quiz-controls').classList.remove('hidden');
+                    updateQuizView();
+                }
+
+                // FAQ Accordion
+                function toggleFaq(btn) {
+                    const answer = btn.nextElementSibling;
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    const isHidden = answer.classList.contains('hidden');
+
+                    // Close all others
+                    document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+                    document.querySelectorAll('.faq-item .material-symbols-outlined').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                    if (isHidden) {
+                        answer.classList.remove('hidden');
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+
+                // Form submission
+                function handleFormSubmit(e) {
+                    e.preventDefault();
+                    document.getElementById('success-modal').classList.remove('hidden');
+                }
+
+                function closeSuccessModal() {
+                    document.getElementById('success-modal').classList.add('hidden');
+                    document.getElementById('application-form').reset();
+                }
+            </script>
+        </div>
+    </main>
+    <footer class="w-full bg-surface-container-low text-on-surface pt-space-xl pb-space-lg">
+        <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter pb-space-xl">
+                <div class="lg:col-span-4 flex flex-col gap-space-md">
+                    <div class="flex items-center gap-space-md"><img alt="Laboral Kutxa Modelo ANDES Logo"
+                            class="h-8 w-auto object-contain"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1XhRcVJS32u8eEjU1u-VYIPANRHsLfxYHItCPDrSTU3KDdaR2r3ZiZW-7mhg6BEX-ZhXZF2Cyo6Bnk2RuB9REfcJUQL0p06c7iHAzqJ-c4wkJR4jZLqTv-qjRvSMtLGiiMqmtSWfrCmL0ZGGMN9n4_tpf3VneNclbSjO_W1OvLVdTsH1ezS0J3bqeL-cOZk-8fV6BGmULjJVKQfExeXuWEhFR1kWNgk-ngGuDzYB6IYo_HhhWTZ9uB37g"><span
+                            class="font-headline-sm text-headline-sm text-on-surface">Modelo ANDES</span></div>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Acompañamiento integral a
+                        startups, spin-offs universitarias y proyectos innovadores en Euskadi y todo el territorio
+                        nacional, combinando solvencia financiera cooperativa y metodología ágil de incubación.</p>
+                    <div class="flex flex-wrap gap-space-xs pt-space-xs"><span
+                            class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Ecosistema
+                            Innovación LK</span><span
+                            class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Red
+                            Corporativa</span><span
+                            class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Sello
+                            de Impacto</span></div>
+                </div>
+                <div class="lg:col-span-2 lg:col-start-6 flex flex-col gap-space-sm">
+                    <h3 class="font-title-sm text-title-sm text-on-surface">Navegación</h3>
+                    <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#que-es-andes">¿Qué es
+                                ANDES?</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#etapas">Recorrido y
+                                Etapas</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#beneficios">Beneficios y
+                                Apoyo</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#diagnostico">Test de
+                                Diagnóstico</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#faq">Preguntas
+                                Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h3 class="font-title-sm text-title-sm text-on-surface">Soporte y Mentoring</h3>
+                    <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#mentores">Red de Mentores
+                                Especialistas</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#financiacion">Líneas de
+                                Financiación Ágiles</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#espacios">Hubs y Espacios
+                                de Trabajo</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#contacto">Oficina Técnica
+                                del Emprendedor</a></li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-3 flex flex-col gap-space-sm">
+                    <h3 class="font-title-sm text-title-sm text-on-surface">Marco Legal</h3>
+                    <ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#">Política de
+                                Privacidad</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#">Política de Cookies</a>
+                        </li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#">Términos y
+                                Condiciones</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#">Propiedad Intelectual y
+                                Patentes</a></li>
+                        <li class=""><a class="hover:text-on-surface transition-colors" href="#">Garantía de
+                                Confidencialidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+                <p class="">© 2025 Laboral Kutxa. Programa Modelo ANDES. Todos los derechos reservados.</p>
+                <div class="flex items-center gap-space-md font-label-md text-label-md"><a
+                        class="hover:text-on-surface transition-colors" href="#">LinkedIn Innovación</a><a
+                        class="hover:text-on-surface transition-colors" href="#">Twitter / X</a><a
+                        class="hover:text-on-surface transition-colors" href="#">YouTube LK Emprende</a></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
