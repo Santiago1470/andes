@@ -1352,6 +1352,8 @@
                     <form
                         class="w-full bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-md flex flex-col gap-space-md"
                         id="application-form" onsubmit="handleFormSubmit(event)">
+                        <!-- Campo anti-spam oculto: si un bot lo rellena, FormSubmit descarta el envío -->
+                        <input autocomplete="off" class="hidden" name="_honey" tabindex="-1" type="text">
                         <!-- Stage Pre-selector -->
                         <div class="flex flex-col gap-space-xs">
                             <label class="font-title-sm text-title-sm text-on-surface">Etapa a la que te
@@ -1384,14 +1386,14 @@
                                     apellidos *</label>
                                 <input
                                     class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
-                                    id="applicant-name" placeholder="Ej. Mikel Arana Goiri" required="" type="text">
+                                    id="applicant-name" name="applicant_name" placeholder="Ej. Mikel Arana Goiri" required="" type="text">
                             </div>
                             <div class="flex flex-col gap-1">
                                 <label class="font-title-sm text-title-sm text-on-surface" for="applicant-email">Correo
                                     electrónico corporativo / profesional *</label>
                                 <input
                                     class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
-                                    id="applicant-email" placeholder="mikel@ejemplo.com" required="" type="email">
+                                    id="applicant-email" name="applicant_email" placeholder="mikel@ejemplo.com" required="" type="email">
                             </div>
                         </div>
                         <!-- Phone & Project Name -->
@@ -1401,14 +1403,14 @@
                                     for="applicant-phone">Teléfono de contacto *</label>
                                 <input
                                     class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
-                                    id="applicant-phone" placeholder="+34 600 000 000" required="" type="tel">
+                                    id="applicant-phone" name="applicant_phone" placeholder="+34 600 000 000" required="" type="tel">
                             </div>
                             <div class="flex flex-col gap-1">
                                 <label class="font-title-sm text-title-sm text-on-surface" for="project-name">Nombre del
                                     proyecto o startup *</label>
                                 <input
                                     class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
-                                    id="project-name" placeholder="Ej. CircularTech Solutions" required="" type="text">
+                                    id="project-name" name="project_name" placeholder="Ej. CircularTech Solutions" required="" type="text">
                             </div>
                         </div>
                         <!-- Web or LinkedIn -->
@@ -1417,7 +1419,7 @@
                                 LinkedIn del fundador / proyecto (opcional)</label>
                             <input
                                 class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md"
-                                id="project-link" placeholder="https://linkedin.com/in/... o https://tusitio.es"
+                                id="project-link" name="project_link" placeholder="https://linkedin.com/in/... o https://tusitio.es"
                                 type="url">
                         </div>
                         <!-- Description -->
@@ -1426,24 +1428,26 @@
                                 descripción de la propuesta y estado actual *</label>
                             <textarea
                                 class="w-full px-space-md py-space-xs rounded-lg bg-surface-container-low focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container text-on-surface font-body-md text-body-md resize-none"
-                                id="project-desc"
+                                id="project-desc" name="project_desc"
                                 placeholder="Explica en 3 o 4 líneas cuál es el problema que resuelves, tu solución tecnológica y el punto en el que os encontráis hoy..."
                                 required="" rows="4"></textarea>
                         </div>
                         <!-- GDPR Consent -->
                         <label class="flex items-start gap-space-xs cursor-pointer">
-                            <input class="mt-1 accent-primary-container" required="" type="checkbox">
+                            <input class="mt-1 accent-primary-container" name="gdpr_consent" required="" type="checkbox" value="Aceptado">
                             <span class="font-body-sm text-body-sm text-on-surface-variant">
                                 He leído y acepto la <a class="text-primary-container underline" href="#">política de
                                     privacidad y tratamiento de datos</a> de Laboral Kutxa para la gestión de mi
                                 postulación en el Modelo ANDES.
                             </span>
                         </label>
+                        <!-- Estado del envío (avisos y errores) -->
+                        <div class="hidden rounded-lg p-space-sm font-body-sm text-body-sm" id="form-status"></div>
                         <!-- Submit Button -->
                         <div class="pt-space-xs">
                             <button
                                 class="w-full py-space-md px-space-lg rounded-lg bg-primary-container text-on-primary hover:bg-primary font-title-sm text-title-sm transition-all shadow-md flex items-center justify-center gap-space-xs"
-                                type="submit">
+                                id="form-submit-btn" type="submit">
                                 <span class="">Enviar postulación al Modelo ANDES</span>
                                 <span class="material-symbols-outlined text-[18px]">send</span>
                             </button>
@@ -1837,15 +1841,146 @@
                     }
                 }
 
+                // ===== ENVÍO DE POSTULACIONES POR CORREO =====
+                // Funciona en hosting estático (GitHub Pages): no necesita backend ni dependencias.
+                // Rellena FORM_ENDPOINT con tu endpoint "form-to-email":
+                //
+                //  1) FormSubmit.co (gratis y sin registro):
+                //     a) Escribe tu correo real: 'https://formsubmit.co/ajax/tucorreo@dominio.com'
+                //     b) Envía una postulación de prueba y pulsa el enlace de activación que te
+                //        llegará por email (solo la primera vez).
+                //     c) Opcional: tras activar, FormSubmit te dará una cadena aleatoria para
+                //        sustituir tu correo y no exponerlo en el HTML.
+                //  2) Formspree (requiere cuenta gratuita): 'https://formspree.io/f/tu-id'
+                //
+                // Si prefieres no usar ningún servicio, deja FORM_ENDPOINT vacío y pon tu correo en
+                // POSTULACION_EMAIL: al enviar se abrirá el cliente de correo del visitante con los
+                // datos ya redactados (mailto).
+                const FORM_ENDPOINT = 'https://formsubmit.co/ajax/st147086@gmail.com';
+                const POSTULACION_EMAIL = 'st147086@gmail.com';
+
+                const FIELD_LABELS = {
+                    form_stage: 'Etapa a la que se postula',
+                    applicant_name: 'Nombre y apellidos',
+                    applicant_email: 'Correo electrónico',
+                    applicant_phone: 'Teléfono de contacto',
+                    project_name: 'Nombre del proyecto',
+                    project_link: 'Web o LinkedIn',
+                    project_desc: 'Descripción de la propuesta',
+                    gdpr_consent: 'Consentimiento RGPD'
+                };
+
+                function isFormConfigured() {
+                    return FORM_ENDPOINT.trim() !== '' ||
+                        (POSTULACION_EMAIL.trim() !== '' &&
+                            POSTULACION_EMAIL.toUpperCase().indexOf('EJEMPLO.COM') === -1);
+                }
+
+                function setFormStatus(message, type) {
+                    const box = document.getElementById('form-status');
+                    if (!box) return;
+                    if (!message) {
+                        box.className = 'hidden rounded-lg p-space-sm font-body-sm text-body-sm';
+                        box.innerHTML = '';
+                        return;
+                    }
+                    const palette = type === 'error' ?
+                        'bg-error-container text-on-error-container' :
+                        'bg-surface-container text-on-surface';
+                    box.className = 'rounded-lg p-space-sm font-body-sm text-body-sm ' + palette;
+                    box.innerHTML = message;
+                }
+
                 // Form submission
-                function handleFormSubmit(e) {
-                    e.preventDefault();
-                    document.getElementById('success-modal').classList.remove('hidden');
+                async function handleFormSubmit(event) {
+                    event.preventDefault();
+
+                    if (!isFormConfigured()) {
+                        setFormStatus('El formulario todavía no está conectado a ningún correo: define FORM_ENDPOINT o POSTULACION_EMAIL en el bloque "ENVÍO DE POSTULACIONES POR CORREO" de index.html.', 'error');
+                        return;
+                    }
+
+                    const payload = buildApplicationPayload();
+
+                    // Sin endpoint configurado: se abre el cliente de correo del visitante
+                    if (!FORM_ENDPOINT) {
+                        window.location.href = buildMailtoUrl(payload);
+                        setFormStatus('Hemos abierto tu cliente de correo con la postulación ya redactada: pulsa "Enviar" allí para completarla.', 'info');
+                        return;
+                    }
+
+                    const button = document.getElementById('form-submit-btn');
+                    const label = button ? button.querySelector('span') : null;
+                    const originalLabel = label ? label.textContent : '';
+
+                    if (button) {
+                        button.disabled = true;
+                        button.classList.add('opacity-60', 'cursor-not-allowed');
+                    }
+                    if (label) label.textContent = 'Enviando postulación…';
+                    setFormStatus('Enviando tu postulación…', 'info');
+
+                    let sent = false;
+                    try {
+                        const response = await fetch(FORM_ENDPOINT, {
+                            method: 'POST',
+                            headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                            body: JSON.stringify(payload)
+                        });
+                        sent = response.ok;
+                    } catch (error) {
+                        sent = false;
+                    } finally {
+                        if (button) {
+                            button.disabled = false;
+                            button.classList.remove('opacity-60', 'cursor-not-allowed');
+                        }
+                        if (label) label.textContent = originalLabel;
+                    }
+
+                    if (sent) {
+                        setFormStatus('');
+                        document.getElementById('success-modal').classList.remove('hidden');
+                    } else {
+                        setFormStatus('No hemos podido enviar la postulación automáticamente. <button class="underline font-semibold" onclick="sendApplicationByEmail()" type="button">Enviar por correo desde mi cliente</button>', 'error');
+                    }
+                }
+
+                function buildApplicationPayload() {
+                    const payload = {};
+                    // _honey viaja siempre (vacío): FormSubmit lo usa como trampa anti-spam y solo
+                    // descarta el envío si un bot lo rellena.
+                    new FormData(document.getElementById('application-form')).forEach((value, key) => {
+                        payload[key] = value;
+                    });
+                    payload._subject = 'Nueva postulación ANDES · ' +
+                        (payload.form_stage || 'Etapa sin indicar') + ' · ' +
+                        (payload.project_name || 'proyecto sin nombre');
+                    if (payload.applicant_email) payload._replyto = payload.applicant_email;
+                    if (FORM_ENDPOINT.indexOf('formsubmit.co') !== -1) {
+                        payload._template = 'table';
+                        payload._captcha = 'false'; // sin reCAPTCHA para poder enviar por AJAX
+                    }
+                    return payload;
+                }
+
+                function buildMailtoUrl(payload) {
+                    const lines = Object.keys(payload)
+                        .filter(key => key.charAt(0) !== '_')
+                        .map(key => (FIELD_LABELS[key] || key) + ': ' + payload[key]);
+                    return 'mailto:' + POSTULACION_EMAIL +
+                        '?subject=' + encodeURIComponent(payload._subject) +
+                        '&body=' + encodeURIComponent(lines.join('\n'));
+                }
+
+                function sendApplicationByEmail() {
+                    window.location.href = buildMailtoUrl(buildApplicationPayload());
                 }
 
                 function closeSuccessModal() {
                     document.getElementById('success-modal').classList.add('hidden');
                     document.getElementById('application-form').reset();
+                    setFormStatus('');
                 }
                 // Header nav active state: highlight the link of the section in view (click + scroll)
                 (function initNavScrollSpy() {
