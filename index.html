@@ -19,6 +19,10 @@
     <style>
         @layer base {
 
+            section[id] {
+                scroll-margin-top: 5.5rem;
+            }
+
             html,
             body {
                 margin: 0;
@@ -44,7 +48,7 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
-        id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-secondary-container": "#5c647a", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#3323cc", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#ffb1c2", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "background": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "inverse-primary": "#ffb1c2", "surface-variant": "#d3e4fe", "secondary": "#565e74", "tertiary": "#3120ca", "tertiary-container": "#4b42e1", "surface-tint": "#bb0455", "on-primary-fixed-variant": "#8f003f", "surface-container-high": "#dce9ff", "secondary-container": "#dae2fd", "on-tertiary": "#ffffff", "outline": "#8d6f75", "inverse-surface": "#213145", "on-tertiary-container": "#d4d1ff", "tertiary-fixed-dim": "#c3c0ff", "on-tertiary-fixed": "#0f0069", "primary-container": "#b80053", "surface-bright": "#f8f9ff", "tertiary-fixed": "#e2dfff", "outline-variant": "#e1bec4", "on-surface-variant": "#5a4045", "on-error": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#dae2fd", "secondary-fixed-dim": "#bec6e0", "error-container": "#ffdad6", "surface": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#3f0018", "inverse-on-surface": "#eaf1ff", "on-primary-container": "#ffc7d2", "on-background": "#0b1c30", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "on-surface": "#0b1c30", "on-secondary-fixed": "#131b2e", "primary": "#8c003e", "primary-fixed": "#ffd9df"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.5rem", "gutter-lg": "2rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "margin": "2rem", "margin-desktop": "3rem"}, "fontFamily": {"title-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-sm": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "title-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"]}, "fontSize": {"title-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}], "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]}}}};</script>
+        id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-secondary-container": "#5c647a", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#3323cc", "error": "#ba1a1a", "surface-dim": "#cbdbf5", "primary-fixed-dim": "#ffb1c2", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "background": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "inverse-primary": "#ffb1c2", "surface-variant": "#d3e4fe", "secondary": "#565e74", "tertiary": "#3120ca", "tertiary-container": "#4b42e1", "surface-tint": "#bb0455", "on-primary-fixed-variant": "#8f003f", "surface-container-high": "#dce9ff", "secondary-container": "#dae2fd", "on-tertiary": "#ffffff", "outline": "#8d6f75", "inverse-surface": "#213145", "on-tertiary-container": "#d4d1ff", "tertiary-fixed-dim": "#c3c0ff", "on-tertiary-fixed": "#0f0069", "primary-container": "#A50050", "surface-bright": "#f8f9ff", "tertiary-fixed": "#e2dfff", "outline-variant": "#e1bec4", "on-surface-variant": "#5a4045", "on-error": "#ffffff", "on-secondary": "#ffffff", "secondary-fixed": "#dae2fd", "secondary-fixed-dim": "#bec6e0", "error-container": "#ffdad6", "surface": "#f8f9ff", "surface-container-highest": "#d3e4fe", "on-primary-fixed": "#3f0018", "inverse-on-surface": "#eaf1ff", "on-primary-container": "#ffc7d2", "on-background": "#0b1c30", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "on-surface": "#0b1c30", "on-secondary-fixed": "#131b2e", "primary": "#8c003e", "primary-fixed": "#ffd9df"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-sm": "0.5rem", "gutter-lg": "2rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "margin": "2rem", "margin-desktop": "3rem"}, "fontFamily": {"title-sm": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"], "label-sm": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "title-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"]}, "fontSize": {"title-sm": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}], "display-lg-mobile": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "body-md": ["15px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]}}}};</script>
 </head>
 
 <body class="bg-surface font-body-md text-on-surface antialiased">
@@ -58,7 +62,7 @@
                     ANDES</span></div>
             <nav class="hidden xl:flex items-center gap-space-md"
                 data-active-classes="bg-surface-container text-on-surface rounded-lg"><a aria-current="page"
-                    class="font-title-sm px-space-sm py-space-xs transition-colors bg-surface-container text-on-surface rounded-lg"
+                    class="font-title-sm text-title-sm px-space-sm py-space-xs transition-colors bg-surface-container text-on-surface rounded-lg"
                     data-path="inicio" href="#que-es-andes">¿Qué es ANDES?</a><a
                     class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
                     data-path="etapas-del-programa" href="#etapas">Recorrido y Etapas</a><a
@@ -805,12 +809,12 @@
                                 perdido por modalidad combinada con el respaldo estratégico e institucional de Laboral
                                 Kutxa.</p>
                         </div>
-                        <div
+                        <!-- <div
                             class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high">
                             <span
                                 class="material-symbols-outlined text-primary-container text-[20px]">account_balance_wallet</span><span
                                 class="font-label-md text-label-md text-on-surface font-semibold">Hasta 75.000 € en
-                                presupuestos asignados</span></div>
+                                presupuestos asignados</span></div> -->
                     </div><!-- PARTE 1: BENEFICIOS ESPECÍFICOS Y PRESUPUESTO POR MODALIDAD -->
                     <div class="flex flex-col gap-space-lg">
                         <div class="flex flex-col gap-space-xs">
@@ -828,16 +832,16 @@
                                 class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow relative overflow-hidden">
                                 <div class="flex flex-col gap-space-md">
                                     <div class="flex items-center justify-between"><span
-                                            class="px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
-                                                class="w-2 h-2 rounded-full bg-secondary"></span>
+                                            class="px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
+                                                class="w-2 h-2 rounded-full bg-primary-container"></span>
                                             Preincubación</span><span
-                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-on-surface-variant font-semibold">3
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-primary-container font-semibold">3
                                             Meses</span></div>
                                     <div class="flex flex-col gap-space-xs"><span
-                                            class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Presupuesto
+                                            class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider font-semibold">Presupuesto
                                             asignado</span>
                                         <div class="flex items-baseline gap-space-xs"><span
-                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-secondary font-bold">10.000
+                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-[#A50050] font-bold">2.250
                                                 €</span><span
                                                 class="font-label-sm text-label-sm text-on-surface-variant">/
                                                 proyecto</span></div>
@@ -852,21 +856,22 @@
                                     <ul
                                         class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
                                         <li class="flex items-start gap-space-xs"><span
-                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">restaurant</span><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">restaurant</span><span
                                                 class="">Apoyo para alimentación / manutención durante el
                                                 programa.</span></li>
                                         <li class="flex items-start gap-space-xs"><span
-                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">lightbulb</span><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">lightbulb</span><span
                                                 class="">Validación inicial de la hipótesis y descubrimiento de
                                                 cliente.</span></li>
                                         <li class="flex items-start gap-space-xs"><span
-                                                class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">co_present</span><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">co_present</span><span
                                                 class="">Tutorías de negocio continuadas y metodologías Lean.</span>
                                         </li>
                                     </ul>
                                 </div>
+                                <!-- text-title-sm -->
                                 <div class="pt-space-sm"><button
-                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-all flex items-center justify-center gap-space-xs"
+                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center justify-center gap-space-xs"
                                         onclick="prefillAndScrollToForm('Preincubación')"><span class="">Postular a
                                             Preincubación</span><span
                                             class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
@@ -876,15 +881,15 @@
                                 class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow relative overflow-hidden">
                                 <div class="flex flex-col gap-space-md">
                                     <div class="flex items-center justify-between"><span
-                                            class="px-space-sm py-space-xs rounded-full bg-secondary-container text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
-                                                class="w-2 h-2 rounded-full bg-tertiary"></span> Incubación</span><span
-                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-tertiary font-semibold">6
+                                            class="px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1"><span
+                                                class="w-2 h-2 rounded-full bg-primary-container"></span> Incubación</span><span
+                                            class="font-label-sm text-label-sm px-space-xs py-space-xs rounded bg-surface-container text-primary-container font-semibold">6
                                             Meses</span></div>
                                     <div class="flex flex-col gap-space-xs"><span
-                                            class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-semibold">Presupuesto
+                                            class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider font-semibold">Presupuesto
                                             asignado</span>
                                         <div class="flex items-baseline gap-space-xs"><span
-                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-tertiary font-bold">25.000
+                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-[#A50050] font-bold">10.000
                                                 €</span><span
                                                 class="font-label-sm text-label-sm text-on-surface-variant">/
                                                 proyecto</span></div>
@@ -899,21 +904,21 @@
                                     <ul
                                         class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant pt-space-xs">
                                         <li class="flex items-start gap-space-xs"><span
-                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">code</span><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">code</span><span
                                                 class="">Desarrollo técnico, prototipado y pruebas de concepto.</span>
                                         </li>
                                         <li class="flex items-start gap-space-xs"><span
-                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">experiment</span><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">experiment</span><span
                                                 class="">Experimentos con usuarios y métricas de tracción
                                                 iniciales.</span></li>
                                         <li class="flex items-start gap-space-xs"><span
-                                                class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">payments</span><span
+                                                class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">payments</span><span
                                                 class="">Recursos financieros directos para desarrollo y pruebas.</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="pt-space-sm"><button
-                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-tertiary text-on-tertiary hover:opacity-90 transition-all flex items-center justify-center gap-space-xs"
+                                        class="w-full font-title-sm text-title-sm py-space-xs px-space-md rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center justify-center gap-space-xs"
                                         onclick="prefillAndScrollToForm('Incubación')"><span class="">Postular a
                                             Incubación</span><span
                                             class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
@@ -932,7 +937,7 @@
                                             class="font-label-sm text-label-sm text-primary-container uppercase tracking-wider font-semibold">Presupuesto
                                             asignado</span>
                                         <div class="flex items-baseline gap-space-xs"><span
-                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary-container font-bold">40.000
+                                                class="font-display-lg text-display-lg-mobile md:text-display-lg text-[#A50050] font-bold">17.500
                                                 €</span><span
                                                 class="font-label-sm text-label-sm text-on-surface-variant">/
                                                 proyecto</span></div>
@@ -1842,6 +1847,85 @@
                     document.getElementById('success-modal').classList.add('hidden');
                     document.getElementById('application-form').reset();
                 }
+                // Header nav active state: highlight the link of the section in view (click + scroll)
+                (function initNavScrollSpy() {
+                    const nav = document.querySelector('header nav[data-active-classes]');
+                    if (!nav) return;
+
+                    const header = document.querySelector('header');
+                    const activeClasses = (nav.dataset.activeClasses || '').split(/\s+/).filter(Boolean);
+                    const idleClasses = ['text-on-surface-variant', 'hover:text-on-surface'];
+                    const items = Array.from(nav.querySelectorAll('a[href^="#"]'))
+                        .map(link => {
+                            const section = document.getElementById(link.getAttribute('href').slice(1));
+                            return section ? {link, section} : null;
+                        })
+                        .filter(Boolean);
+
+                    if (!items.length) return;
+
+                    // A click highlights instantly; the lock avoids flicker while the browser scrolls
+                    let pendingLink = null;
+                    let pendingUntil = 0;
+
+                    function setActiveLink(activeLink) {
+                        items.forEach(({link}) => {
+                            const isActive = link === activeLink;
+                            activeClasses.forEach(cls => link.classList.toggle(cls, isActive));
+                            idleClasses.forEach(cls => link.classList.toggle(cls, !isActive));
+                            if (isActive) {
+                                link.setAttribute('aria-current', 'page');
+                            } else {
+                                link.removeAttribute('aria-current');
+                            }
+                        });
+                    }
+
+                    function resolveActiveLink() {
+                        const offset = (header ? header.offsetHeight : 0) + 8;
+                        const scrollPos = window.scrollY + offset;
+                        let current = items[0];
+
+                        items.forEach(item => {
+                            const sectionTop = item.section.getBoundingClientRect().top + window.scrollY;
+                            if (sectionTop <= scrollPos) current = item;
+                        });
+
+                        const reachedBottom = window.innerHeight + window.scrollY >=
+                            document.documentElement.scrollHeight - 2;
+                        return reachedBottom ? items[items.length - 1] : current;
+                    }
+
+                    function syncActiveLink() {
+                        const current = resolveActiveLink().link;
+                        if (pendingLink && Date.now() < pendingUntil && current !== pendingLink) return;
+                        pendingLink = null;
+                        setActiveLink(current);
+                    }
+
+                    nav.addEventListener('click', event => {
+                        const link = event.target.closest('a[href^="#"]');
+                        if (!link || !nav.contains(link)) return;
+                        pendingLink = link;
+                        pendingUntil = Date.now() + 1500;
+                        setActiveLink(link);
+                    });
+
+                    // Any manual scroll takes over the highlight right away
+                    ['wheel', 'touchstart', 'keydown'].forEach(type =>
+                        window.addEventListener(type, () => {
+                            if (!pendingLink) return;
+                            pendingLink = null;
+                            syncActiveLink();
+                        }, {passive: true}));
+
+                    window.addEventListener('scroll', syncActiveLink, {passive: true});
+                    window.addEventListener('resize', syncActiveLink);
+                    window.addEventListener('load', syncActiveLink);
+                    window.addEventListener('hashchange', syncActiveLink);
+
+                    syncActiveLink();
+                })();
             </script>
         </div>
     </main>
