@@ -56,10 +56,12 @@
         <div
             class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex items-center justify-between gap-gutter">
             <!-- https://lh3.googleusercontent.com/aida/AEtjO1XhRcVJS32u8eEjU1u-VYIPANRHsLfxYHItCPDrSTU3KDdaR2r3ZiZW-7mhg6BEX-ZhXZF2Cyo6Bnk2RuB9REfcJUQL0p06c7iHAzqJ-c4wkJR4jZLqTv-qjRvSMtLGiiMqmtSWfrCmL0ZGGMN9n4_tpf3VneNclbSjO_W1OvLVdTsH1ezS0J3bqeL-cOZk-8fV6BGmULjJVKQfExeXuWEhFR1kWNgk-ngGuDzYB6IYo_HhhWTZ9uB37g -->
-            <div class="flex items-center gap-space-md"><img alt="Laboral Kutxa Modelo ANDES Logo"
+            <!-- Logo + nombre del programa: al pulsar cualquiera de los dos se vuelve al inicio de la página -->
+            <a aria-label="Modelo ANDES · Volver al inicio de la página" class="flex items-center gap-space-md"
+                href="#top" onclick="return scrollToPageTop()"><img alt="Laboral Kutxa Modelo ANDES Logo"
                     class="h-12 w-auto object-contain" src="logo-remove.png"><span
                     class="font-headline-sm text-headline-sm text-on-surface tracking-tight hidden sm:inline-block">Modelo
-                    ANDES</span></div>
+                    ANDES</span></a>
             <nav class="hidden xl:flex items-center gap-space-md"
                 data-active-classes="bg-surface-container text-on-surface rounded-lg"><a aria-current="page"
                     class="font-title-sm text-title-sm px-space-sm py-space-xs transition-colors bg-surface-container text-on-surface rounded-lg"
@@ -1673,6 +1675,13 @@
                     if (target) {
                         target.scrollIntoView({ behavior: 'smooth' });
                     }
+                }
+
+                // Volver al inicio de la página (clic en el logo o en "Modelo ANDES" del header).
+                // Devuelve false para que el href="#top" solo actúe como respaldo si no hay JS.
+                function scrollToPageTop() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return false;
                 }
 
                 // Interactive Quiz State
