@@ -1282,16 +1282,19 @@
                             </div>
                         </div>
                         <!-- Quiz Navigation Controls -->
-                        <div class="flex items-center justify-between pt-space-sm" id="quiz-controls">
+                        <div class="flex items-center justify-between gap-space-sm pt-space-sm" id="quiz-controls">
                             <button
                                 class="hidden font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-all flex items-center gap-1"
                                 id="quiz-prev-btn" onclick="prevQuizStep()">
                                 <span class="material-symbols-outlined text-[16px]">arrow_back</span> Anterior
                             </button>
-                            <div class="ml-auto">
+                            <!-- Aviso mientras la pregunta en curso está sin responder -->
+                            <span class="font-body-sm text-body-sm text-on-surface-variant" id="quiz-hint">Selecciona una
+                                opción para continuar</span>
+                            <div class="ml-auto shrink-0">
                                 <button
-                                    class="font-title-sm text-title-sm px-space-lg py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-1"
-                                    id="quiz-next-btn" onclick="nextQuizStep()">
+                                    class="font-title-sm text-title-sm px-space-lg py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-1 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-primary-container"
+                                    id="quiz-next-btn" onclick="nextQuizStep()" disabled>
                                     Siguiente <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                                 </button>
                             </div>
@@ -1674,10 +1677,67 @@
 
                 // Interactive Quiz State
                 let currentQuizStep = 1;
+                const QUIZ_TOTAL_STEPS = 3;
                 const userAnswers = { q1: null, q2: null, q3: null };
+
+                // --- Motor de recomendación del test ---
+                // Cada opción representa un momento del proyecto:
+                //   A → Preincubación (0 puntos)  B → Incubación (1 punto)  C → Aceleración (2 puntos)
+                // Se puntúan las 3 preguntas (incluida la 3) para calcular la etapa recomendada.
+                const QUIZ_OPTION_POINTS = { A: 0, B: 1, C: 2 };
+                const QUIZ_STAGE_NAMES = ['Preincubación', 'Incubación', 'Aceleración'];
+                // Pesos: el estado actual del proyecto (q1) es el indicador más fiable de la etapa,
+                // por eso pesa el triple que el equipo (q2) y la necesidad declarada (q3).
+                const QUIZ_WEIGHTS = { q1: 3, q2: 1, q3: 1 };
+                // Puntuación total entre 0 y 10 → umbrales de cada etapa:
+                //   >= 7 Aceleración (producto en mercado y señales de escala)
+                //   >= 3 Incubación  (prototipo/PMV y equipo en validación)
+                //   <  3 Preincubación (idea sin prototipo y necesidad de orientación)
+                const QUIZ_ACELERACION_MIN_SCORE = 7;
+                const QUIZ_INCUBACION_MIN_SCORE = 3;
 
                 function selectOption(questionNum, optionValue) {
                     userAnswers[`q${questionNum}`] = optionValue;
+                    highlightSelectedOption(questionNum, optionValue);
+                    updateQuizNavState();
+                }
+
+                // Refuerza el estado de las tarjetas al marcarlas y al navegar con el teclado
+                document.querySelectorAll('.quiz-option-card input').forEach(input => {
+                    input.addEventListener('change', event => {
+                        if (!event.target.checked) return;
+                        selectOption(Number(event.target.name.replace('q', '')), event.target.value);
+                    });
+                });
+
+                // Marca visualmente la tarjeta elegida para confirmar qué opción se está tomando en cuenta
+                function highlightSelectedOption(questionNum, optionValue) {
+                    document.querySelectorAll(`input[name="q${questionNum}"]`).forEach(input => {
+                        const card = input.closest('.quiz-option-card');
+                        if (!card) return;
+                        const isSelected = input.value === optionValue;
+                        card.classList.toggle('ring-2', isSelected);
+                        card.classList.toggle('ring-primary-container', isSelected);
+                        card.classList.toggle('bg-surface-container', isSelected);
+                        card.classList.toggle('bg-surface-container-low', !isSelected);
+                    });
+                }
+
+                function clearSelectionHighlights() {
+                    document.querySelectorAll('.quiz-option-card').forEach(card => {
+                        card.classList.remove('ring-2', 'ring-primary-container', 'bg-surface-container');
+                        card.classList.add('bg-surface-container-low');
+                    });
+                }
+
+                // El botón de avance solo se activa cuando la pregunta en curso tiene respuesta
+                function updateQuizNavState() {
+                    const nextBtn = document.getElementById('quiz-next-btn');
+                    const hint = document.getElementById('quiz-hint');
+                    const isAnswered = Boolean(userAnswers[`q${currentQuizStep}`]);
+
+                    nextBtn.disabled = !isAnswered;
+                    if (hint) hint.classList.toggle('hidden', isAnswered);
                 }
 
                 function updateQuizView() {
@@ -1687,31 +1747,32 @@
                     document.getElementById('quiz-q3').classList.toggle('hidden', currentQuizStep !== 3);
 
                     // Update step indicator
-                    document.getElementById('quiz-step-indicator').innerText = `Paso ${currentQuizStep} de 3`;
+                    document.getElementById('quiz-step-indicator').innerText = `Paso ${currentQuizStep} de ${QUIZ_TOTAL_STEPS}`;
 
                     // Update progress bar
                     const bar = document.getElementById('quiz-progress-bar');
-                    if (currentQuizStep === 1) bar.style.width = '33%';
-                    if (currentQuizStep === 2) bar.style.width = '66%';
-                    if (currentQuizStep === 3) bar.style.width = '100%';
+                    bar.style.width = `${Math.round((currentQuizStep / QUIZ_TOTAL_STEPS) * 100)}%`;
 
                     // Manage buttons
                     document.getElementById('quiz-prev-btn').classList.toggle('hidden', currentQuizStep === 1);
                     const nextBtn = document.getElementById('quiz-next-btn');
-                    if (currentQuizStep === 3) {
+                    if (currentQuizStep === QUIZ_TOTAL_STEPS) {
                         nextBtn.innerHTML = 'Ver resultado <span class="material-symbols-outlined text-[16px]">check</span>';
                     } else {
                         nextBtn.innerHTML = 'Siguiente <span class="material-symbols-outlined text-[16px]">arrow_forward</span>';
                     }
+
+                    updateQuizNavState();
                 }
 
                 function nextQuizStep() {
+                    // La pregunta en curso es obligatoria: sin respuesta no se avanza ni se muestra resultado
                     if (!userAnswers[`q${currentQuizStep}`]) {
-                        // default select option A if user clicks directly
-                        userAnswers[`q${currentQuizStep}`] = 'A';
+                        updateQuizNavState();
+                        return;
                     }
 
-                    if (currentQuizStep < 3) {
+                    if (currentQuizStep < QUIZ_TOTAL_STEPS) {
                         currentQuizStep++;
                         updateQuizView();
                     } else {
@@ -1728,30 +1789,33 @@
 
                 let calculatedRecommendedStage = 'Incubación';
 
+                // Calcula la etapa recomendada puntuando las TRES respuestas (incluida la pregunta 3).
+                // Las preguntas sin responder (null) puntúan 0, pero no deberían llegar aquí porque
+                // el botón "Ver resultado" permanece deshabilitado hasta responder la pregunta 3.
+                function calculateRecommendedStage() {
+                    const score = Object.keys(QUIZ_WEIGHTS).reduce((total, key) => {
+                        const points = QUIZ_OPTION_POINTS[userAnswers[key]] || 0;
+                        return total + (points * QUIZ_WEIGHTS[key]);
+                    }, 0);
+
+                    if (score >= QUIZ_ACELERACION_MIN_SCORE) return QUIZ_STAGE_NAMES[2];
+                    if (score >= QUIZ_INCUBACION_MIN_SCORE) return QUIZ_STAGE_NAMES[1];
+                    return QUIZ_STAGE_NAMES[0];
+                }
+
                 function showQuizResults() {
+                    // Salvaguarda: si falta alguna respuesta no se muestra ningún resultado
+                    const isComplete = Object.keys(userAnswers).every(key => Boolean(userAnswers[key]));
+                    if (!isComplete) {
+                        updateQuizNavState();
+                        return;
+                    }
+
                     document.getElementById('quiz-questions-container').classList.add('hidden');
                     document.getElementById('quiz-controls').classList.add('hidden');
                     document.getElementById('quiz-result-view').classList.remove('hidden');
 
-                    // Tally answers
-                    let cCount = 0;
-                    let bCount = 0;
-                    let aCount = 0;
-
-                    Object.values(userAnswers).forEach(val => {
-                        if (val === 'C') cCount++;
-                        else if (val === 'B') bCount++;
-                        else aCount++;
-                    });
-
-                    if (cCount >= 2 || userAnswers.q1 === 'C') {
-                        calculatedRecommendedStage = 'Aceleración';
-                    } else if (bCount >= 2 || userAnswers.q1 === 'B') {
-                        calculatedRecommendedStage = 'Incubación';
-                    } else {
-                        calculatedRecommendedStage = 'Preincubación';
-                    }
-
+                    calculatedRecommendedStage = calculateRecommendedStage();
                     renderStageCard(calculatedRecommendedStage);
                 }
 
@@ -1837,6 +1901,7 @@
                     userAnswers.q2 = null;
                     userAnswers.q3 = null;
                     document.querySelectorAll('.quiz-option-card input').forEach(input => input.checked = false);
+                    clearSelectionHighlights();
                     document.getElementById('quiz-result-view').classList.add('hidden');
                     document.getElementById('quiz-questions-container').classList.remove('hidden');
                     document.getElementById('quiz-controls').classList.remove('hidden');
