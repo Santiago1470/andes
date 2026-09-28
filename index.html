@@ -62,28 +62,45 @@
                     class="h-12 w-auto object-contain" src="logo-remove.png"><span
                     class="font-headline-sm text-headline-sm text-on-surface tracking-tight hidden sm:inline-block">Modelo
                     ANDES</span></a>
-            <nav class="hidden xl:flex items-center gap-space-md"
-                data-active-classes="bg-surface-container text-on-surface rounded-lg"><a aria-current="page"
-                    class="font-title-sm text-title-sm px-space-sm py-space-xs transition-colors bg-surface-container text-on-surface rounded-lg"
-                    data-path="inicio" href="#que-es-andes">¿Qué es ANDES?</a><a
-                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
-                    data-path="etapas-del-programa" href="#etapas">Recorrido y Etapas</a><a
-                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
-                    data-path="beneficios-y-apoyo" href="#beneficios">Beneficios</a><a
-                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
-                    data-path="test-de-diagnostico" href="#diagnostico">Test de Diagnóstico</a><a
-                    class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-xs transition-colors"
-                    data-path="preguntas-frecuentes" href="#faq">Preguntas Frecuentes</a></nav>
+            <!-- Panel de navegación: overlay por debajo de xl (1280px) y neutralizado con
+                 display:contents en xl, para que la <nav> siga siendo hija directa del flex del
+                 header y exista una única fuente de verdad para el resaltado de sección (scroll-spy). -->
+            <div class="hidden xl:contents absolute top-20 left-0 right-0 z-40 py-space-sm px-margin-mobile md:px-margin bg-surface rounded-b-xl shadow-[0_12px_24px_rgba(11,28,48,0.10)]"
+                data-open="false" id="nav-panel">
+                <nav class="flex flex-col gap-space-xs xl:flex-row xl:items-center xl:gap-space-md"
+                    data-active-classes="bg-surface-container text-on-surface rounded-lg"><a aria-current="page"
+                        class="font-title-sm text-title-sm px-space-sm py-space-sm xl:py-space-xs transition-colors bg-surface-container text-on-surface rounded-lg"
+                        data-path="inicio" href="#que-es-andes">¿Qué es ANDES?</a><a
+                        class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-sm xl:py-space-xs transition-colors"
+                        data-path="etapas-del-programa" href="#etapas">Recorrido y Etapas</a><a
+                        class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-sm xl:py-space-xs transition-colors"
+                        data-path="beneficios-y-apoyo" href="#beneficios">Beneficios</a><a
+                        class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-sm xl:py-space-xs transition-colors"
+                        data-path="test-de-diagnostico" href="#diagnostico">Test de Diagnóstico</a><a
+                        class="font-title-sm text-title-sm text-on-surface-variant hover:text-on-surface px-space-sm py-space-sm xl:py-space-xs transition-colors"
+                        data-path="preguntas-frecuentes" href="#faq">Preguntas Frecuentes</a></nav>
+                <!-- En <sm "Contacto" sale de la barra para dejar sitio al CTA principal + la hamburguesa -->
+                <a class="sm:hidden flex items-center justify-center font-title-sm text-title-sm px-space-md py-space-sm mt-space-xs rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
+                    href="#contacto">Contacto</a>
+            </div>
             <div class="flex items-center gap-space-sm md:gap-space-md">
                 <div
                     class="hidden lg:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span
                         class="font-label-sm text-label-sm text-on-surface">Convocatoria Abierta 2027</span>
                 </div>
-                <a class="hidden md:inline-flex items-center justify-center text-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"
+                <a class="inline-flex items-center justify-center text-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-primary-container text-on-primary hover:bg-primary transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"
                     href="#diagnostico">Descubre tu etapa</a>
-                <a class="inline-flex items-center justify-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
+                <a class="hidden sm:inline-flex items-center justify-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all"
                     href="#contacto">Contacto</a>
+                <!-- Botón del menú móvil: desaparece en xl, donde la <nav> vuelve a mostrarse inline -->
+                <button aria-controls="nav-panel" aria-expanded="false"
+                    aria-label="Abrir menú de navegación"
+                    class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-container transition-colors"
+                    id="nav-toggle" type="button">
+                    <span class="material-symbols-outlined text-[22px]" id="nav-toggle-icon-open">menu</span>
+                    <span class="material-symbols-outlined text-[22px] hidden" id="nav-toggle-icon-close">close</span>
+                </button>
                 <!-- <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span
                         class="material-symbols-outlined text-on-primary text-[18px]">person</span></div> -->
             </div>
@@ -376,19 +393,20 @@
                                 duración, objetivos y recursos específicos disponibles en cada fase.</p>
                         </div>
                         <!-- Custom Tab Switcher -->
-                        <div class="inline-flex p-1 bg-surface-container rounded-xl self-start md:self-auto">
+                        <div
+                            class="flex flex-col gap-1 w-full p-1 bg-surface-container rounded-xl sm:inline-flex sm:w-auto sm:flex-row sm:gap-0 sm:self-start md:self-auto">
                             <button
-                                class="font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface shadow-sm transition-all"
+                                class="w-full text-left sm:w-auto sm:text-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface shadow-sm transition-all"
                                 id="tab-btn-pre" onclick="switchStageTab('pre')">
                                 1. Preincubación
                             </button>
                             <button
-                                class="font-title-sm text-title-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-all"
+                                class="w-full text-left sm:w-auto sm:text-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-all"
                                 id="tab-btn-inc" onclick="switchStageTab('inc')">
                                 2. Incubación
                             </button>
                             <button
-                                class="font-title-sm text-title-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-all"
+                                class="w-full text-left sm:w-auto sm:text-center font-title-sm text-title-sm px-space-md py-space-xs rounded-lg text-on-surface-variant hover:text-on-surface transition-all"
                                 id="tab-btn-ace" onclick="switchStageTab('ace')">
                                 3. Aceleración
                             </button>
@@ -2074,6 +2092,59 @@
                     document.getElementById('application-form').reset();
                     setFormStatus('');
                 }
+                // Menú de navegación móvil: panel desplegable por debajo de xl (1280px).
+                // Se reutiliza el mismo elemento de navegación, así que el resaltado de
+                // sección (scroll-spy) sigue funcionando sin cambios.
+                (function initMobileNav() {
+                    const panel = document.getElementById('nav-panel');
+                    const toggle = document.getElementById('nav-toggle');
+                    if (!panel || !toggle) return;
+
+                    const iconOpen = document.getElementById('nav-toggle-icon-open');
+                    const iconClose = document.getElementById('nav-toggle-icon-close');
+                    const isOpen = () => panel.dataset.open === 'true';
+
+                    // Al quitar "hidden" el div cae en su display por defecto (block) y en xl
+                    // sigue mandando xl:contents, así que no hace falta alternar más clases.
+                    function setOpen(open) {
+                        panel.dataset.open = open ? 'true' : 'false';
+                        panel.classList.toggle('hidden', !open);
+                        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                        toggle.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+                        if (iconOpen) iconOpen.classList.toggle('hidden', open);
+                        if (iconClose) iconClose.classList.toggle('hidden', !open);
+                    }
+
+                    toggle.addEventListener('click', () => setOpen(!isOpen()));
+
+                    // Al pulsar un enlace se cierra antes del salto para no tapar la sección destino
+                    panel.addEventListener('click', event => {
+                        if (event.target.closest('a[href^="#"]')) setOpen(false);
+                    });
+
+                    // Clic fuera del panel (o en el propio botón) cierra el menú
+                    document.addEventListener('click', event => {
+                        if (!isOpen()) return;
+                        if (panel.contains(event.target) || toggle.contains(event.target)) return;
+                        setOpen(false);
+                    });
+
+                    document.addEventListener('keydown', event => {
+                        if (event.key !== 'Escape' || !isOpen()) return;
+                        setOpen(false);
+                        toggle.focus();
+                    });
+
+                    // En xl el panel deja de existir (display:contents), el botón se oculta y
+                    // el estado vuelve a reposo para no arrastrarlo si se regresa a móvil
+                    window.addEventListener('resize', () => {
+                        if (window.innerWidth >= 1280) setOpen(false);
+                    });
+                    window.addEventListener('hashchange', () => setOpen(false));
+
+                    setOpen(false);
+                })();
+
                 // Header nav active state: highlight the link of the section in view (click + scroll)
                 (function initNavScrollSpy() {
                     const nav = document.querySelector('header nav[data-active-classes]');
